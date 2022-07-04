@@ -4,6 +4,7 @@ const { showLoginForm } = require('../controllers/authController');
 const { logoutController } = require('../controllers/authController');
 const { loginController } = require('../controllers/authController');
 const { createUser } = require('../controllers/authController');
+const {upload} = require('../controllers/authController');
 const router = express.Router();
 
 
@@ -17,7 +18,7 @@ function checkAuthenticated(req, res, next) {
 router
     .route('/register')
     .get(checkAuthenticated, showRegisterForm)
-    .post(createUser);
+    .post(upload.single('profile_pic'), createUser);
 
 router
     .route('/login')

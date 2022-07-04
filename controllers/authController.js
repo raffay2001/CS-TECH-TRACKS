@@ -4,6 +4,8 @@ const session = require('express-session');
 const flash = require('express-flash');
 const passport = require('passport');
 const initializePassport = require('./passportConfig');
+const multer = require('multer');
+const upload = multer({ storage: multer.memoryStorage() });
 
 
 const showRegisterForm = (req, res) => {
@@ -29,12 +31,15 @@ const loginController = passport.authenticate('local', {
 });
 
 const createUser = async (req, res) => {
-    const { name, email, password, password2 } = req.body;
-    console.log({ name, email, password, password2 });
+    const { name, username, email, phone, city, street, zipcode, password, password2 } = req.body;
+    const intStreet = parseInt(street);
+    const intZipCode = parseInt(zipcode);
+    const profilePic = req.file.buffer.toString('base64');
+    console.log({ name, username, email, phone, city, intStreet, intZipCode, password, password2, profilePic });
 
     let errors = [];
 
-    if (!name || !email || !password || !password2) {
+    if (!name || !email || !password || !password2 || !username || !phone || !city || !zipcode || !street) {
         errors.push({ message: 'Please Enter All Fields' });
     }
 
@@ -64,7 +69,7 @@ const createUser = async (req, res) => {
                 res.render('register', { 'errors': errors })
             } else {
                 pool.query(
-                    `INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, password`, [name, email, hashedPassword], (error, message) => {
+                    `INSERT INTO users (name, username, email, password, picture, phone, city, street, zipcode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id, password`, [name, username, email, hashedPassword, profilePic, phone, city, intStreet, intZipCode], (error, message) => {
                         if (error) throw error;
                         console.log(results.rows);
                         req.flash('success_msg', 'You are now registered, Please Log in!!');
@@ -82,7 +87,8 @@ module.exports = {
     , showLoginForm
     , logoutController
     , loginController
-    , createUser
+    , createUser,
+    upload
 }
 
 
