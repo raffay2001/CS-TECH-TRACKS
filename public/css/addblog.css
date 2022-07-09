@@ -1,0 +1,32 @@
+h3{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
+    font-size: 2.2rem;
+    margin-bottom: 70px;
+    color: #4a44d7b3;
+}
+
+
+.custom-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+    margin-left: 10px;
+    color: #4a44d7b3;
+  
+
+}
+input,textarea{
+    height: 50px;
+    margin-left: 10px;
+    
+}
+.button{
+
+    width: 100px;
+    background-color: #4a44d7b3;
+    color: white;
+    display: block;
+    margin: auto;
+}
+
+

@@ -1,0 +1,41 @@
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 145px;
+    font-size: 2.8rem;
+}
+
+img {
+    opacity: 0.8;
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 450px;
+}
+
+div p {
+    font-size: 1.2rem;
+}
+
+.roadmaps {
+
+    margin-bottom: 30px;
+    position: relative;
+    bottom: 50px;
+
+
+}
+
+.buttons {
+
+    width: 100px;
+    background-color: #4a44d7b3;
+    color: white;
+}
+
+@media screen and (max-width:1023px) {
+    .roadmaps {
+        display: flex;
+        flex-direction: column;
+        position: inherit;
+        margin-top: 10px;
+    }
+}

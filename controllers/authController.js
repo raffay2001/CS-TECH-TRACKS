@@ -9,24 +9,46 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 
 const showRegisterForm = (req, res) => {
-    res.render('register');
+    let context = {
+        'title': 'SIGN UP',
+        'is_authenticated': false,
+        'name': undefined,
+        'picture': undefined
+    }
+    if (req.user) {
+        context['is_authenticated'] = true;
+        context['picture'] = req.user.picture;
+        context['name'] = req.user.name;
+    }
+    res.render('signup', context);
 }
 
 const showLoginForm = (req, res) => {
-    res.render('login');
+    let context = {
+        'title': 'SIGN IN',
+        'is_authenticated': false,
+        'name': undefined,
+        'picture': undefined
+    }
+    if (req.user) {
+        context['is_authenticated'] = true;
+        context['picture'] = req.user.picture;
+        context['name'] = req.user.name;
+    }
+    res.render('signin', context);
 }
 
 const logoutController = (req, res, next) => {
     req.logout(req.user, err => {
         if (err) return next(err);
-        req.flash('success_msg', 'You have logged out');
-        res.redirect('/users/login');
+        req.flash('success_msg', 'You have logged out !');
+        res.redirect('/');
     });
 }
 
 const loginController = passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/users/login',
+    failureRedirect: '/signin',
     failureFlash: true
 });
 
@@ -35,7 +57,7 @@ const createUser = async (req, res) => {
     const intStreet = parseInt(street);
     const intZipCode = parseInt(zipcode);
     const profilePic = req.file.buffer.toString('base64');
-    console.log({ name, username, email, phone, city, intStreet, intZipCode, password, password2, profilePic });
+    // console.log({ name, username, email, phone, city, intStreet, intZipCode, password, password2, profilePic });
 
     let errors = [];
 
@@ -52,7 +74,11 @@ const createUser = async (req, res) => {
     }
 
     if (errors.length > 0) {
-        res.render('register', { 'errors': errors });
+        const context = {
+            'title': 'SIGN UP',
+            'errors': errors
+        }
+        res.render('signup', context);
     } else {
         // Form Validation has passed
         let hashedPassword = await bcrypt.hash(password, 10);
@@ -66,14 +92,14 @@ const createUser = async (req, res) => {
 
             if (results.rows.length > 0) {
                 errors.push({ message: 'Email Already Registered' })
-                res.render('register', { 'errors': errors })
+                res.render('signup', { 'errors': errors, 'title': 'SIGN UP' })
             } else {
                 pool.query(
                     `INSERT INTO users (name, username, email, password, picture, phone, city, street, zipcode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id, password`, [name, username, email, hashedPassword, profilePic, phone, city, intStreet, intZipCode], (error, message) => {
                         if (error) throw error;
                         console.log(results.rows);
                         req.flash('success_msg', 'You are now registered, Please Log in!!');
-                        res.redirect('/users/login');
+                        res.redirect('/signin');
                     }
                 );
             }

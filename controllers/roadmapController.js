@@ -1,6 +1,6 @@
-const showIndexPage = (req, res) => {
+const roadmapController = async(req, res) => {
     let context = {
-        'title': 'CS TECH TRACKS',
+        'title': 'ROADMAPS',
         'is_authenticated': false,
         'name': undefined,
         'picture': undefined
@@ -10,12 +10,11 @@ const showIndexPage = (req, res) => {
         context['picture'] = req.user.picture;
         context['name'] = req.user.name;
     }
-    res.render('home', context);
+    res.render('roadmaps', context);
 }
 
 
 
-
 module.exports = {
-    showIndexPage
-};
+    roadmapController
+}

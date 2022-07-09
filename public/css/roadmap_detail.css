@@ -1,0 +1,56 @@
+.roadmap-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-top: 65px;
+    margin-bottom: 45px;
+}
+
+.accordians {
+    background-color: #bbbbd5b3;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #4a44d7b3;
+}
+
+ul li a {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #4c47cfb3;
+}
+
+li {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    color: #4a44d7b3;
+    font-size: 1.3rem;
+}
+
+.button {
+    background-color: #4c47cfb3;
+    border: none;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+}
+
+.buttons {
+    background-color: #4c47cfb3;
+    border: none;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    margin-left: 14px;
+}
+
+
+.buttons:hover {
+    color: white;
+}

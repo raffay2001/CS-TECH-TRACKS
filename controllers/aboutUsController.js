@@ -1,6 +1,6 @@
-const showIndexPage = (req, res) => {
+const showAboutUsPage = (req, res) => {
     let context = {
-        'title': 'CS TECH TRACKS',
+        'title': 'ABOUT US',
         'is_authenticated': false,
         'name': undefined,
         'picture': undefined
@@ -10,12 +10,10 @@ const showIndexPage = (req, res) => {
         context['picture'] = req.user.picture;
         context['name'] = req.user.name;
     }
-    res.render('home', context);
+    res.render('about', context)
 }
 
 
-
-
 module.exports = {
-    showIndexPage
-};
+    showAboutUsPage
+}

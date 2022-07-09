@@ -1,0 +1,373 @@
+<%- include('partials/header.ejs') %>
+
+  <!-- Showing Logout Message  -->
+  <!-- For Showing Success Messages -->
+  <% if (messages.success_msg) { %>
+    <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
+      <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= messages.success_msg %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+  <% } %>
+
+  <!-- Hero Section  -->
+  <section class="u-clearfix u-section-1" id="carousel_4e45">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div
+              class="u-align-left u-container-style u-layout-cell u-left-cell u-size-27 u-size-xs-60 u-white u-layout-cell-1"
+              src="">
+              <div class="u-container-layout u-container-layout-1">
+                <h1 class="u-custom-font u-font-montserrat u-text u-text-custom-color-1 u-text-1"> CS TECH TRACKS<br>
+                </h1>
+                <p class="u-custom-font u-font-oswald u-text u-text-2" id="hero-para">
+                  CS Tech Tracks is a platform
+                  where Computer Science
+                  students can access extensive roadmaps
+                  of various major computer science fields for instance Frontend Development,
+                  Backend Development, Mobile Development, Data Science, Cloud Computing, DevOps
+                  and more
+                </p>
+                <a href="roadmaps.html"
+                  class="u-active-palette-2-dark-3 u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-font-montserrat u-hover-custom-color-2 u-radius-8 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1">learn
+                  more</a>
+              </div>  
+            </div>
+            <div
+              class="u-align-center u-container-style u-layout-cell u-right-cell u-size-33 u-size-xs-60 u-layout-cell-2"
+              src="">
+              <div class="u-container-layout u-container-layout-2" src="">
+                <img class="u-image u-image-default u-image-1" src="images/image.png" alt="" data-image-width="1280"
+                  data-image-height="768">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Create a Blog Section  -->
+  <section class="u-align-center u-clearfix u-lightbox u-section-2" id="carousel_1666">
+    <div class="u-align-left u-container-style u-group u-shape-rectangle u-white u-group-1">
+      <div class="u-container-layout u-container-layout-1">
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-custom-color-1 u-text-1">Create ​a Blog</h2>
+        <p class="u-text u-text-2"> Share your experience with the world. You can write and read the blog regarding any
+          technical and non-technical field and topics.</p>
+        <a href="blog.html"
+          class="u-active-palette-2-dark-3 u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-font-montserrat u-hover-custom-color-2 u-radius-8 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1">read
+          more</a>
+      </div>
+    </div>
+    <div
+      class="u-carousel u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1"
+      data-interval="1500" data-u-ride="carousel" id="carousel-33f7">
+      <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+        <li data-u-target="#carousel-33f7" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle"
+          style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#carousel-33f7" data-u-slide-to="1" class="u-grey-70 u-shape-circle"
+          style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#carousel-33f7" data-u-slide-to="2" class="u-grey-70 u-shape-circle"
+          style="width: 10px; height: 10px;"></li>
+      </ol>
+      <div class="u-carousel-inner u-gallery-inner" role="listbox">
+        <div class="u-active u-carousel-item u-gallery-item u-carousel-item-1">
+          <div class="u-back-slide" data-image-width="7500" data-image-height="5000">
+            <img class="u-back-image u-expanded"
+              src="images/Bloggerwithloudspeakerinfluencingonaudienceinsocialmedia.jpg">
+          </div>
+          <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-1">
+            <h3 class="u-gallery-heading">Sample Title</h3>
+            <p class="u-gallery-text">Sample Text</p>
+          </div>
+        </div>
+        <div class="u-carousel-item u-gallery-item u-carousel-item-2">
+          <div class="u-back-slide" data-image-width="600" data-image-height="400">
+            <img class="u-back-image u-expanded" src="images/6.jpg">
+          </div>
+          <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-2">
+            <h3 class="u-gallery-heading">Sample Title</h3>
+            <p class="u-gallery-text">Sample Text</p>
+          </div>
+        </div>
+        <div class="u-carousel-item u-gallery-item u-carousel-item-3" data-image-width="1600" data-image-height="1157">
+          <div class="u-back-slide">
+            <img class="u-back-image u-expanded" src="images/3.jpg">
+          </div>
+          <div class="u-align-center u-over-slide u-valign-bottom u-over-slide-3">
+            <h3 class="u-gallery-heading"></h3>
+            <p class="u-gallery-text"></p>
+          </div>
+          <style data-mode="XL" data-visited="true"></style>
+          <style data-mode="LG"></style>
+          <style data-mode="MD"></style>
+          <style data-mode="SM"></style>
+          <style data-mode="XS" data-visited="true"></style>
+        </div>
+      </div>
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1"
+        href="#carousel-33f7" role="button" data-u-slide="prev">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 451.847 451.847">
+            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+          </svg>
+        </span>
+        <span class="sr-only">
+          <svg viewBox="0 0 451.847 451.847">
+            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+          </svg>
+        </span>
+      </a>
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2"
+        href="#carousel-33f7" role="button" data-u-slide="next">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 451.846 451.847">
+            <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+          </svg>
+        </span>
+        <span class="sr-only">
+          <svg viewBox="0 0 451.846 451.847">
+            <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Trends Section  -->
+  <section class="u-align-center u-clearfix u-white u-section-3" id="carousel_43ea">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-absolute-hcenter-xs u-custom-color-1 u-expanded-height u-shape u-shape-rectangle u-shape-1"></div>
+      <img class="u-image u-image-1" src="images/41.jpg" data-image-width="840" data-image-height="400">
+      <div class="u-align-left u-container-style u-group u-radius-15 u-shape-round u-white u-group-1">
+        <div class="u-container-layout u-valign-middle u-container-layout-1">
+          <h3 class="u-custom-font u-font-montserrat u-text u-text-custom-color-1 u-text-1">Trends</h3>
+          <p class="u-align-left u-text u-text-2">Check Out the most viewed roadmaps!</p>
+          <a href="trend.html"
+            class="u-active-palette-2-dark-3 u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-font-montserrat u-hover-custom-color-2 u-radius-8 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1">learn
+            more</a>
+        </div>
+      </div>
+      <div class="u-custom-color-1 u-shape u-shape-circle u-shape-2"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section  -->
+  <section class="u-align-center u-clearfix u-section-4" id="carousel_aedc">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h1 class="u-custom-font u-font-montserrat u-text u-text-custom-color-1 u-text-2" id="testimonials-head">What
+        Clients Say<br>
+      </h1>
+      <p class="u-text u-text-3">We place huge value on strong relationships and have seen the benefit they bring to our
+        business. Customer feedback is vital in helping us to get it right.</p>
+      <div class="u-expanded-width u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-15 u-repeater-item u-shape-round">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+              <img src="images/person1.jpg" alt="person1"
+                class="u-border-5 u-border-white u-image u-image-circle u-image-1" data-image-width="206"
+                data-image-height="206">
+              <p class="u-custom-font u-font-montserrat u-text u-text-grey-70 u-text-4"><span
+                  class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 95.333 95.332" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M30.512,43.939c-2.348-0.676-4.696-1.019-6.98-1.019c-3.527,0-6.47,0.806-8.752,1.793    c2.2-8.054,7.485-21.951,18.013-23.516c0.975-0.145,1.774-0.85,2.04-1.799l2.301-8.23c0.194-0.696,0.079-1.441-0.318-2.045    s-1.035-1.007-1.75-1.105c-0.777-0.106-1.569-0.16-2.354-0.16c-12.637,0-25.152,13.19-30.433,32.076    c-3.1,11.08-4.009,27.738,3.627,38.223c4.273,5.867,10.507,9,18.529,9.313c0.033,0.001,0.065,0.002,0.098,0.002    c9.898,0,18.675-6.666,21.345-16.209c1.595-5.705,0.874-11.688-2.032-16.851C40.971,49.307,36.236,45.586,30.512,43.939z">
+                        </path>
+                        <path
+                          d="M92.471,54.413c-2.875-5.106-7.61-8.827-13.334-10.474c-2.348-0.676-4.696-1.019-6.979-1.019    c-3.527,0-6.471,0.806-8.753,1.793c2.2-8.054,7.485-21.951,18.014-23.516c0.975-0.145,1.773-0.85,2.04-1.799l2.301-8.23    c0.194-0.696,0.079-1.441-0.318-2.045c-0.396-0.604-1.034-1.007-1.75-1.105c-0.776-0.106-1.568-0.16-2.354-0.16    c-12.637,0-25.152,13.19-30.434,32.076c-3.099,11.08-4.008,27.738,3.629,38.225c4.272,5.866,10.507,9,18.528,9.312    c0.033,0.001,0.065,0.002,0.099,0.002c9.897,0,18.675-6.666,21.345-16.209C96.098,65.559,95.376,59.575,92.471,54.413z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>&nbsp; Vitae suscipit tellus mauris a diam maecenas sed enim ut. Mauris augue neque
+                gravida in fermentum. Praesent semper feugiat nibh sed pulvinar proin.&nbsp;&nbsp;<span
+                  class="u-icon u-icon-2"><svg class="u-svg-content" viewBox="0 0 98.829 98.829" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M96.76,41.603C91.511,22.831,78.562,9.204,65.975,9.204c-1.011,0-2.021,0.088-3.005,0.262    c-0.558,0.098-1.046,0.426-1.348,0.902c-0.301,0.479-0.386,1.061-0.233,1.605l2.591,9.268c0.25,0.895,1.113,1.5,2.01,1.459    l0.206-0.004c4.668,0,13.199,6.996,17.548,22.545c0.172,0.617,0.335,1.248,0.492,1.906c-4.882-2.416-10.706-2.975-15.98-1.506    C56.358,48.97,49.388,61.356,52.714,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.046-0.834    c7.846-2.193,13.745-8.707,16.611-18.338C99.521,61.764,99.456,51.249,96.76,41.603z">
+                        </path>
+                        <path
+                          d="M14.088,9.206c-1.009,0-2.02,0.086-3.003,0.26c-0.557,0.096-1.046,0.426-1.347,0.902    c-0.301,0.479-0.386,1.061-0.234,1.605l2.592,9.268c0.25,0.895,1.097,1.5,2.01,1.459l0.204-0.004    c4.668,0,13.2,6.996,17.549,22.545c0.173,0.621,0.336,1.252,0.492,1.906c-4.884-2.416-10.706-2.975-15.98-1.506    C4.475,48.97-2.497,61.356,0.831,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.047-0.834    c7.845-2.193,13.744-8.707,16.611-18.338c2.586-8.689,2.522-19.205-0.175-28.852C39.625,22.831,26.678,9.206,14.088,9.206z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>
+              </p>
+              <h5 class="u-text u-text-custom-color-1 u-text-default u-text-5">Nat Reynolds</h5>
+              <h6 class="u-text u-text-default u-text-grey-50 u-text-6">Chief Accountant</h6>
+            </div>
+          </div>
+          <div
+            class="u-align-center u-container-style u-grey-5 u-list-item u-radius-15 u-repeater-item u-shape-round u-list-item-2">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+              <img src="images/person2.jpg" alt="person1"
+                class="u-border-5 u-border-white u-image u-image-circle u-image-2" data-image-width="206"
+                data-image-height="206">
+              <p class="u-custom-font u-font-montserrat u-text u-text-grey-70 u-text-7"><span
+                  class="u-icon u-icon-3"><svg class="u-svg-content" viewBox="0 0 95.333 95.332" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M30.512,43.939c-2.348-0.676-4.696-1.019-6.98-1.019c-3.527,0-6.47,0.806-8.752,1.793    c2.2-8.054,7.485-21.951,18.013-23.516c0.975-0.145,1.774-0.85,2.04-1.799l2.301-8.23c0.194-0.696,0.079-1.441-0.318-2.045    s-1.035-1.007-1.75-1.105c-0.777-0.106-1.569-0.16-2.354-0.16c-12.637,0-25.152,13.19-30.433,32.076    c-3.1,11.08-4.009,27.738,3.627,38.223c4.273,5.867,10.507,9,18.529,9.313c0.033,0.001,0.065,0.002,0.098,0.002    c9.898,0,18.675-6.666,21.345-16.209c1.595-5.705,0.874-11.688-2.032-16.851C40.971,49.307,36.236,45.586,30.512,43.939z">
+                        </path>
+                        <path
+                          d="M92.471,54.413c-2.875-5.106-7.61-8.827-13.334-10.474c-2.348-0.676-4.696-1.019-6.979-1.019    c-3.527,0-6.471,0.806-8.753,1.793c2.2-8.054,7.485-21.951,18.014-23.516c0.975-0.145,1.773-0.85,2.04-1.799l2.301-8.23    c0.194-0.696,0.079-1.441-0.318-2.045c-0.396-0.604-1.034-1.007-1.75-1.105c-0.776-0.106-1.568-0.16-2.354-0.16    c-12.637,0-25.152,13.19-30.434,32.076c-3.099,11.08-4.008,27.738,3.629,38.225c4.272,5.866,10.507,9,18.528,9.312    c0.033,0.001,0.065,0.002,0.099,0.002c9.897,0,18.675-6.666,21.345-16.209C96.098,65.559,95.376,59.575,92.471,54.413z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>&nbsp;Pharetra vel turpis nunc eget lorem. Quisque id diam vel quam elementum
+                pulvinar etiam. Urna porttitor rhoncus dolor purus non enim praesent elementum.&nbsp;&nbsp;<span
+                  class="u-icon u-icon-4"><svg class="u-svg-content" viewBox="0 0 98.829 98.829" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M96.76,41.603C91.511,22.831,78.562,9.204,65.975,9.204c-1.011,0-2.021,0.088-3.005,0.262    c-0.558,0.098-1.046,0.426-1.348,0.902c-0.301,0.479-0.386,1.061-0.233,1.605l2.591,9.268c0.25,0.895,1.113,1.5,2.01,1.459    l0.206-0.004c4.668,0,13.199,6.996,17.548,22.545c0.172,0.617,0.335,1.248,0.492,1.906c-4.882-2.416-10.706-2.975-15.98-1.506    C56.358,48.97,49.388,61.356,52.714,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.046-0.834    c7.846-2.193,13.745-8.707,16.611-18.338C99.521,61.764,99.456,51.249,96.76,41.603z">
+                        </path>
+                        <path
+                          d="M14.088,9.206c-1.009,0-2.02,0.086-3.003,0.26c-0.557,0.096-1.046,0.426-1.347,0.902    c-0.301,0.479-0.386,1.061-0.234,1.605l2.592,9.268c0.25,0.895,1.097,1.5,2.01,1.459l0.204-0.004    c4.668,0,13.2,6.996,17.549,22.545c0.173,0.621,0.336,1.252,0.492,1.906c-4.884-2.416-10.706-2.975-15.98-1.506    C4.475,48.97-2.497,61.356,0.831,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.047-0.834    c7.845-2.193,13.744-8.707,16.611-18.338c2.586-8.689,2.522-19.205-0.175-28.852C39.625,22.831,26.678,9.206,14.088,9.206z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>
+              </p>
+              <h5 class="u-text u-text-custom-color-1 u-text-default u-text-8">Celia Almeda</h5>
+              <h6 class="u-text u-text-default u-text-grey-50 u-text-9">Secretary</h6>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-15 u-repeater-item u-shape-round">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
+              <img src="images/person3.jpg" alt="person1"
+                class="u-border-5 u-border-white u-image u-image-circle u-image-3" data-image-width="206"
+                data-image-height="206">
+              <p class="u-custom-font u-font-montserrat u-text u-text-grey-70 u-text-10"><span
+                  class="u-icon u-icon-5"><svg class="u-svg-content" viewBox="0 0 95.333 95.332" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M30.512,43.939c-2.348-0.676-4.696-1.019-6.98-1.019c-3.527,0-6.47,0.806-8.752,1.793    c2.2-8.054,7.485-21.951,18.013-23.516c0.975-0.145,1.774-0.85,2.04-1.799l2.301-8.23c0.194-0.696,0.079-1.441-0.318-2.045    s-1.035-1.007-1.75-1.105c-0.777-0.106-1.569-0.16-2.354-0.16c-12.637,0-25.152,13.19-30.433,32.076    c-3.1,11.08-4.009,27.738,3.627,38.223c4.273,5.867,10.507,9,18.529,9.313c0.033,0.001,0.065,0.002,0.098,0.002    c9.898,0,18.675-6.666,21.345-16.209c1.595-5.705,0.874-11.688-2.032-16.851C40.971,49.307,36.236,45.586,30.512,43.939z">
+                        </path>
+                        <path
+                          d="M92.471,54.413c-2.875-5.106-7.61-8.827-13.334-10.474c-2.348-0.676-4.696-1.019-6.979-1.019    c-3.527,0-6.471,0.806-8.753,1.793c2.2-8.054,7.485-21.951,18.014-23.516c0.975-0.145,1.773-0.85,2.04-1.799l2.301-8.23    c0.194-0.696,0.079-1.441-0.318-2.045c-0.396-0.604-1.034-1.007-1.75-1.105c-0.776-0.106-1.568-0.16-2.354-0.16    c-12.637,0-25.152,13.19-30.434,32.076c-3.099,11.08-4.008,27.738,3.629,38.225c4.272,5.866,10.507,9,18.528,9.312    c0.033,0.001,0.065,0.002,0.099,0.002c9.897,0,18.675-6.666,21.345-16.209C96.098,65.559,95.376,59.575,92.471,54.413z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>&nbsp;Mauris augue neque gravida in fermentum. Praesent semper feugiat nibh sed
+                pulvinar proin. Nibh nisl dictumst vestibulum rhoncus est pellentesque elit. &nbsp;<span
+                  class="u-icon u-icon-6"><svg class="u-svg-content" viewBox="0 0 98.829 98.829" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M96.76,41.603C91.511,22.831,78.562,9.204,65.975,9.204c-1.011,0-2.021,0.088-3.005,0.262    c-0.558,0.098-1.046,0.426-1.348,0.902c-0.301,0.479-0.386,1.061-0.233,1.605l2.591,9.268c0.25,0.895,1.113,1.5,2.01,1.459    l0.206-0.004c4.668,0,13.199,6.996,17.548,22.545c0.172,0.617,0.335,1.248,0.492,1.906c-4.882-2.416-10.706-2.975-15.98-1.506    C56.358,48.97,49.388,61.356,52.714,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.046-0.834    c7.846-2.193,13.745-8.707,16.611-18.338C99.521,61.764,99.456,51.249,96.76,41.603z">
+                        </path>
+                        <path
+                          d="M14.088,9.206c-1.009,0-2.02,0.086-3.003,0.26c-0.557,0.096-1.046,0.426-1.347,0.902    c-0.301,0.479-0.386,1.061-0.234,1.605l2.592,9.268c0.25,0.895,1.097,1.5,2.01,1.459l0.204-0.004    c4.668,0,13.2,6.996,17.549,22.545c0.173,0.621,0.336,1.252,0.492,1.906c-4.884-2.416-10.706-2.975-15.98-1.506    C4.475,48.97-2.497,61.356,0.831,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.047-0.834    c7.845-2.193,13.744-8.707,16.611-18.338c2.586-8.689,2.522-19.205-0.175-28.852C39.625,22.831,26.678,9.206,14.088,9.206z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>
+              </p>
+              <h5 class="u-text u-text-custom-color-1 u-text-default u-text-11">Bob Roberts</h5>
+              <h6 class="u-text u-text-default u-text-grey-50 u-text-12">Sales Manager</h6>
+            </div>
+          </div>
+          <div class="u-align-center u-container-style u-grey-5 u-list-item u-radius-15 u-repeater-item u-shape-round">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
+              <img src="images/person4.jpg" alt="person1"
+                class="u-border-5 u-border-white u-image u-image-circle u-image-3" data-image-width="206"
+                data-image-height="206">
+              <p class="u-custom-font u-font-montserrat u-text u-text-grey-70 u-text-13"><span
+                  class="u-icon u-icon-7"><svg class="u-svg-content" viewBox="0 0 95.333 95.332" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M30.512,43.939c-2.348-0.676-4.696-1.019-6.98-1.019c-3.527,0-6.47,0.806-8.752,1.793    c2.2-8.054,7.485-21.951,18.013-23.516c0.975-0.145,1.774-0.85,2.04-1.799l2.301-8.23c0.194-0.696,0.079-1.441-0.318-2.045    s-1.035-1.007-1.75-1.105c-0.777-0.106-1.569-0.16-2.354-0.16c-12.637,0-25.152,13.19-30.433,32.076    c-3.1,11.08-4.009,27.738,3.627,38.223c4.273,5.867,10.507,9,18.529,9.313c0.033,0.001,0.065,0.002,0.098,0.002    c9.898,0,18.675-6.666,21.345-16.209c1.595-5.705,0.874-11.688-2.032-16.851C40.971,49.307,36.236,45.586,30.512,43.939z">
+                        </path>
+                        <path
+                          d="M92.471,54.413c-2.875-5.106-7.61-8.827-13.334-10.474c-2.348-0.676-4.696-1.019-6.979-1.019    c-3.527,0-6.471,0.806-8.753,1.793c2.2-8.054,7.485-21.951,18.014-23.516c0.975-0.145,1.773-0.85,2.04-1.799l2.301-8.23    c0.194-0.696,0.079-1.441-0.318-2.045c-0.396-0.604-1.034-1.007-1.75-1.105c-0.776-0.106-1.568-0.16-2.354-0.16    c-12.637,0-25.152,13.19-30.434,32.076c-3.099,11.08-4.008,27.738,3.629,38.225c4.272,5.866,10.507,9,18.528,9.312    c0.033,0.001,0.065,0.002,0.099,0.002c9.897,0,18.675-6.666,21.345-16.209C96.098,65.559,95.376,59.575,92.471,54.413z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>&nbsp;Nisl condimentum id venenatis a gravida in fermentum. Praesent semper feugiat
+                nibh sed pulvinar proin. Nibh nisl condimentum id venenatis a condimentum.&nbsp;&nbsp;<span
+                  class="u-icon u-icon-8"><svg class="u-svg-content" viewBox="0 0 98.829 98.829" x="0px" y="0px"
+                    style="width: 1em; height: 1em;">
+                    <g>
+                      <g>
+                        <path
+                          d="M96.76,41.603C91.511,22.831,78.562,9.204,65.975,9.204c-1.011,0-2.021,0.088-3.005,0.262    c-0.558,0.098-1.046,0.426-1.348,0.902c-0.301,0.479-0.386,1.061-0.233,1.605l2.591,9.268c0.25,0.895,1.113,1.5,2.01,1.459    l0.206-0.004c4.668,0,13.199,6.996,17.548,22.545c0.172,0.617,0.335,1.248,0.492,1.906c-4.882-2.416-10.706-2.975-15.98-1.506    C56.358,48.97,49.388,61.356,52.714,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.046-0.834    c7.846-2.193,13.745-8.707,16.611-18.338C99.521,61.764,99.456,51.249,96.76,41.603z">
+                        </path>
+                        <path
+                          d="M14.088,9.206c-1.009,0-2.02,0.086-3.003,0.26c-0.557,0.096-1.046,0.426-1.347,0.902    c-0.301,0.479-0.386,1.061-0.234,1.605l2.592,9.268c0.25,0.895,1.097,1.5,2.01,1.459l0.204-0.004    c4.668,0,13.2,6.996,17.549,22.545c0.173,0.621,0.336,1.252,0.492,1.906c-4.884-2.416-10.706-2.975-15.98-1.506    C4.475,48.97-2.497,61.356,0.831,73.252c2.696,9.639,11.563,16.373,21.563,16.373c2.037,0,4.071-0.281,6.047-0.834    c7.845-2.193,13.744-8.707,16.611-18.338c2.586-8.689,2.522-19.205-0.175-28.852C39.625,22.831,26.678,9.206,14.088,9.206z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg><img></span>
+              </p>
+              <h5 class="u-text u-text-custom-color-1 u-text-default u-text-14">Mattie Smith</h5>
+              <h6 class="u-text u-text-default u-text-grey-50 u-text-15">Accountant-auditor</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started With Your First Roadmap Section  -->
+  <section class="u-align-center u-clearfix u-white u-section-5" id="carousel_6f6c">
+    <div
+      class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+      <div class="u-custom-color-1 u-shape u-shape-rectangle u-shape-1"></div>
+      <div class="u-clearfix u-gutter-40 u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-size-30 u-white u-layout-cell-1">
+              <div class="u-container-layout u-container-layout-1">
+                <img class="u-image u-image-default u-image-1" src="images/2205_w037_n003_394b_p1_394.jpg" alt=""
+                  data-image-width="1920" data-image-height="737">
+                <p>
+                  <span style="font-size: 1.25rem;">Students can track their progress of a
+                    particular roadmap and can also test their skills by giving quizzes after the
+                    completion of the Roadmap. They can also do hands on practice of each Roadmap
+                    by completing the guided projects. They will also be aware of the latest trends
+                    and technologies of the Computer Science World</span>
+                </p>
+              </div>
+            </div>
+            <div class="u-align-left u-container-style u-grey-5 u-layout-cell u-radius-10 u-size-30 u-layout-cell-2">
+              <div
+                class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-2">
+                <h1 class="u-custom-font u-font-montserrat u-text u-text-custom-color-1 u-text-2"> Get started with your
+                  first Roadmap<br>
+                </h1>
+                <a href="roadmaps.html"
+                  class="u-active-grey-90 u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-hover-custom-color-2 u-radius-8 u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1">
+                  learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<%- include('partials/footer.ejs') %>

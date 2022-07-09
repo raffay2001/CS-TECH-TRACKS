@@ -1,0 +1,50 @@
+<%- include('partials/header.ejs') %>
+
+    <h1 class="text-center mt-5" id="sign-in-heading">Sign In</h1>
+
+    <div class="form-parent mt-4">
+
+        <!-- For Showing Error Messages -->
+        <% if (messages.error) { %>
+            <div style="width: 28rem;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= messages.error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+        
+        <!-- For Showing Success and Info Messages -->
+        <% if (messages.success_msg) { %>
+            <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= messages.success_msg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+
+        <% if (messages.info_msg) { %>
+            <div style="width: 28rem;" class="alert alert-secondary alert-dismissible fade show" role="alert">
+                <%= messages.info_msg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+
+        <!-- Login Form  -->
+        <form action="/signin" method="POST" class="shadow">
+            <div class="mb-4 input-div">
+                <label for="email">Email:</label> <br>
+                <input style="width: 21rem;" type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="mb-4 input-div">
+                <label for="password">Password:</label> <br>
+                <input style="width: 21rem;" type="password" id="password" name="password" placeholder="Password"
+                    required>
+            </div>
+            <div class="mb-4">
+                <button type="submit">Login</button>
+            </div>
+            <a href="/signup">Don't have an account? Register</a>
+        </form>
+
+    </div>
+
+
+<%- include('partials/footer.ejs') %>
