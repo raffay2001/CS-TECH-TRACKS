@@ -15,6 +15,8 @@ const { profileController } = require('../controllers/profileController');
 const { updateProfile } = require('../controllers/profileController');
 const { updateProfilePicture } = require('../controllers/profileController');
 const { todoController } = require('../controllers/todoController');
+const { submitTodo } =  require('../controllers/todoController');
+const { deleteTodo } =  require('../controllers/todoController');
 const { upload } = require('../controllers/authController');
 const router = express.Router();
 
@@ -100,5 +102,16 @@ router
 router
     .route('/todos')
     .get(checkNotAuthenticated, todoController)
+
+// route for submitting a todo 
+router
+    .route('/submit-todo')
+    .post(submitTodo);
+
+// route for deleting a todo 
+router
+    .route('/delete-todo/:id')
+    .get(deleteTodo)
+
 
 module.exports = router;
