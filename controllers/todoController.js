@@ -1,6 +1,6 @@
-const showIndexPage = (req, res) => {
+const todoController = async(req, res) => {
     let context = {
-        'title': 'CS TECH TRACKS',
+        'title': 'TODO LIST',
         'is_authenticated': false,
         'name': undefined,
         'picture': undefined
@@ -9,15 +9,12 @@ const showIndexPage = (req, res) => {
         context['is_authenticated'] = true;
         context['picture'] = req.user.picture;
         context['name'] = req.user.name;
-        const name = req.user.name;
-        req.flash('success_msg', `Welcome Back ${name}!`);
     }
-    res.render('home', context);
+    res.render('todo', context);
 }
 
 
 
-
 module.exports = {
-    showIndexPage
-};
+    todoController
+}

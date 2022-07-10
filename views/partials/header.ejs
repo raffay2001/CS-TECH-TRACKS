@@ -7,7 +7,9 @@
   <meta name="keywords"
     content="​One-click solution for your static website., ​Hosting solution with benefits., What Clients Say, ​Purchase, ​Free, ​$9/month, ​$12/month, ​Get started with the simpliest static page">
   <meta name="description" content="">
-  <title><%= title %></title>
+  <title>
+    <%= title %>
+  </title>
 
   <!----------------------------CSS Links------------------------------->
   <!-- Nicepage CSS  -->
@@ -36,6 +38,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
     type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!----------------------------------- Font Links---------------------------------->
   <!-- NicePage Font Links  -->
@@ -116,25 +121,25 @@
                 style="padding: 18px 4px;">Services</a>
               <div class="u-nav-popup">
                 <ul class="u-custom-font u-font-montserrat u-h-spacing-51 u-nav u-unstyled u-v-spacing-10 u-nav-2">
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/trends">Trend</a>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/trends">Trends</a>
                   </li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/blogs">Blog</a>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/blogs">Blogs</a>
                   </li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="profile.html#sec-0320"
-                      data-page-id="92959542">ToDo</a>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/todos"
+                      data-page-id="92959542">Todos</a>
                   </li>
                 </ul>
               </div>
             </li>
             <li class="u-nav-item"><a
                 class="u-active-white u-button-style u-hover-white u-nav-link u-text-custom-color-1 u-text-hover-custom-color-2"
-                href="profile.html" style="padding: 18px 4px;">Profile</a>
+                href="/profile" style="padding: 18px 4px;">Profile</a>
               <div class="u-nav-popup">
                 <ul class="u-custom-font u-font-montserrat u-h-spacing-51 u-nav u-unstyled u-v-spacing-10 u-nav-3">
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="profile.html#sec-4498"
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/profile#sec-4498"
                       data-page-id="92959542">Summary</a>
                   </li>
-                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="profile.html#sec-0a8f"
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/profile#sec-0a8f"
                       data-page-id="92959542">Badges</a>
                   </li>
                 </ul>
@@ -142,10 +147,10 @@
             </li>
             <% if ( is_authenticated ) { %>
               <li class="u-nav-item"><a
-                class="u-active-white u-button-style u-hover-white u-nav-link u-text-custom-color-1 u-text-hover-custom-color-2"
-                href="/logout" style="padding: 18px 2px 18px 4px;">Log Out</a>
+                  class="u-active-white u-button-style u-hover-white u-nav-link u-text-custom-color-1 u-text-hover-custom-color-2"
+                  href="/logout" style="padding: 18px 2px 18px 4px;">Log Out</a>
               </li>
-            <% } %>
+              <% } %>
           </ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
@@ -163,29 +168,27 @@
                 <li class="u-nav-item"><a class="u-button-style u-nav-link">Services</a>
                   <div class="u-nav-popup">
                     <ul class="u-custom-font u-font-montserrat u-h-spacing-51 u-nav u-unstyled u-v-spacing-10 u-nav-5">
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/trends">Trend</a>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/trends">Trends</a>
                       </li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/blogs">Blog</a>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/blogs">Blogs</a>
                       </li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="profile.html#sec-0320"
-                          data-page-id="92959542">ToDo</a>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/todos"
+                          data-page-id="92959542">todos</a>
                       </li>
                     </ul>
                   </div>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="profile.html">Profile</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/profile">Profile</a>
                   <div class="u-nav-popup">
                     <ul class="u-custom-font u-font-montserrat u-h-spacing-51 u-nav u-unstyled u-v-spacing-10 u-nav-6">
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="profile.html#sec-4498"
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/profile#sec-4498"
                           data-page-id="92959542">Summary</a>
                       </li>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="profile.html#sec-0a8f"
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/profile#sec-0a8f"
                           data-page-id="92959542">Badges</a>
                       </li>
                     </ul>
                   </div>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Log Out</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Log Out</a>
                 </li>
@@ -196,10 +199,15 @@
         </div>
       </nav>
       <% if ( !is_authenticated ) { %>
-        <a href="/signin" class="u-border-2 u-border-custom-color-1 u-btn u-button-style u-custom-font  u-font-montserrat u-hover-custom-color-1 u-none u-text-custom-color-1 u-text-hover-white u-btn-1">sign in</a>
-        <a href="/signup" class="u-border-2 u-border-custom-color-1 u-btn u-button-style u-custom-font  u-font-montserrat u-hover-custom-color-1 u-none u-text-custom-color-1 u-text-hover-white u-btn-2">sign up</a>
-      <% }else{ %>
-        <a id="header-name" href="/" class="u-btn u-button-style u-custom-font  u-font-montserrat u-none u-btn-1"><img src="data:image/png;base64,<%= picture %>" alt="avatar"></a>
-      <% } %>
+        <a href="/signin"
+          class="u-border-2 u-border-custom-color-1 u-btn u-button-style u-custom-font  u-font-montserrat u-hover-custom-color-1 u-none u-text-custom-color-1 u-text-hover-white u-btn-1">sign
+          in</a>
+        <a href="/signup"
+          class="u-border-2 u-border-custom-color-1 u-btn u-button-style u-custom-font  u-font-montserrat u-hover-custom-color-1 u-none u-text-custom-color-1 u-text-hover-white u-btn-2">sign
+          up</a>
+        <% }else{ %>
+          <a id="header-name" href="/profile" class="u-btn u-button-style u-custom-font  u-font-montserrat u-none u-btn-1"><img
+              src="data:image/png;base64,<%= picture %>" alt="avatar"></a>
+          <% } %>
     </div>
   </header>

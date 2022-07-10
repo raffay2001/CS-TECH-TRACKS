@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs') %>
+
+    <section class="mt-0 mb-5">
+
+        <h1 class="text-center todo-heading mt-5 mb-4">Your Todo List</h1>
+
+        <div class="body-todo" style="display: flex; justify-content: center;">
+            <div class="app">
+
+                <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
+                    <span>Add New Task</span>
+                    <div class="p-1">
+                        <i class="fa-solid fa-plus plus-icon"></i>
+                    </div>
+                </div>
+                <h5 class="my-3 text-center">Tasks</h5>
+
+
+
+                <!-- Modal -->
+                <form method="POST" class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Task Title</p>
+                                <input class="form-control" type="text" name="" id="textInput">
+                                <div id="msg"></div>
+                                <br>
+                                <p>Due Date</p>
+                                <input class="form-control" type="date" name="" id="dateInput">
+                                <br>
+                                <p>Description</p>
+                                <textarea class="form-control" name="" id="textarea" cols="20" rows="10"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" id="add" class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+
+
+<%- include('partials/footer.ejs') %>

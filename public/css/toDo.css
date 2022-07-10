@@ -1,7 +1,4 @@
-
-.app{
-    
-    margin-top: 100px;
+.app {
     width: 300px;
     height: 500px;
     border: 5px solid #4a44d7b3;
@@ -10,28 +7,32 @@
     font-family: sans-serif;
     background-color: white;
     overflow-y: scroll;
-    }
+}
 
-.app::-webkit-scrollbar{ width:0 !important}
-#addNew{
+.app::-webkit-scrollbar {
+    width: 0 !important
+}
+
+#addNew {
     background-color: #4a44d7b3;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10px;
-    border-radius:5px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.fa-plus{
-    background-color:#4a44d7b3;
+.fa-plus {
+    background-color: #4a44d7b3;
     padding: 3px;
     border-radius: 3px;
-    
+
 
 }
-#tasks div{
+
+#tasks div {
     background-color: #ebdeee;
     border: 3px solid #4a44d7b3;
     padding: 5px;
@@ -39,19 +40,35 @@
     display: grid;
     gap: 4px;
 }
-#tasks{
+
+#tasks {
     display: grid;
     gap: 14px;
 }
 
-.options{
+.options {
     justify-self: center;
     display: flex;
     gap: 20px;
 }
-.options i{
+
+.options i {
     cursor: pointer;
 }
-#msg{
+
+#msg {
     color: red;
+}
+
+.todo-heading {
+    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Satisfy', cursive;
+    color: rgba(74, 68, 215, 0.7);
+    font-weight: 700 !important;
+}
+
+.plus-icon{
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px 10px 5px 10px;
 }

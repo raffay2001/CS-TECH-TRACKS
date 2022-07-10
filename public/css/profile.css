@@ -306,3 +306,71 @@
 }.u-section-6 .u-sheet-1 {
   min-height: 500px;
 }
+
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.profile-summary-heading{
+  background-color: rgba(74,68,215,0.7);
+  padding: 4rem 4rem;
+}
+
+.profile-summary-heading h1{
+  color: white;
+  text-align: center;
+  font-weight: 700 !important;
+}
+
+
+
+
+#general-info-form-btn{
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-image: none;
+  border-style: none;
+  margin: 1.2rem auto 3rem 0;
+  border-radius: 7px;
+  padding: 10px 52px 14px 51px;
+}
+
+#profile-pic-form-btn{
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-image: none;
+  border-style: none;
+  margin: 0rem auto 3rem 0;
+  border-radius: 7px;
+  padding: 10px 52px 14px 51px;
+}
+
+.profile-pic-parent img{
+  width: 251px;
+  height: 251px;
+  border-radius: 50%;
+  background-position: 50% 50%;
+}
+
+.badge-pic-parent img{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-position: 50% 50%;
+}
+
+.badge-pic-parent{
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.badge-pic-parent:hover{
+  cursor: pointer;
+  transform: scale(0.98);
+}
+
+.badge-title{
+  color: rgba(50, 50, 50, 0.8);
+  font-weight: 600;
+}

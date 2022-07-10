@@ -11,6 +11,8 @@ const { showAboutUsPage } = require('../controllers/aboutUsController');
 const { roadmapController } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
+const { profileController } = require('../controllers/profileController');
+const { todoController } = require('../controllers/todoController');
 const { upload } = require('../controllers/authController');
 const router = express.Router();
 
@@ -79,5 +81,14 @@ router
     .route('/blogs')
     .get(checkNotAuthenticated, blogController)
 
+// route for profile page 
+router
+    .route('/profile')
+    .get(checkNotAuthenticated, profileController)
+
+// route for the todo list page 
+router
+    .route('/todos')
+    .get(checkNotAuthenticated, todoController)
 
 module.exports = router;
