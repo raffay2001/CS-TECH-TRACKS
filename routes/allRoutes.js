@@ -12,6 +12,8 @@ const { roadmapController } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
 const { profileController } = require('../controllers/profileController');
+const { updateProfile } = require('../controllers/profileController');
+const { updateProfilePicture } = require('../controllers/profileController');
 const { todoController } = require('../controllers/todoController');
 const { upload } = require('../controllers/authController');
 const router = express.Router();
@@ -60,31 +62,39 @@ router
 // route for about page 
 router
     .route('/about')
-    .get(showAboutUsPage)
+    .get(showAboutUsPage);
 
 
 // route for roadmaps page and roadmap detail page
 // for all roadmaps  
 router
     .route('/roadmaps')
-    .get(checkNotAuthenticated, roadmapController)
+    .get(checkNotAuthenticated, roadmapController);
 
 // for individual roadmap 
 
 // route for trends page 
 router
     .route('/trends')
-    .get(checkNotAuthenticated, trendController)
+    .get(checkNotAuthenticated, trendController);
 
 // route for blogs page
 router
     .route('/blogs')
-    .get(checkNotAuthenticated, blogController)
+    .get(checkNotAuthenticated, blogController);
 
-// route for profile page 
+// route for rendering the profile page 
 router
     .route('/profile')
-    .get(checkNotAuthenticated, profileController)
+    .get(checkNotAuthenticated, profileController);
+// route for updating the general profile information of user 
+router
+    .route('/upate-profile')
+    .post(updateProfile);
+// route for updating the profile picture of the user
+router
+    .route('/update-profile-picture')
+    .post(upload.single('req_profile_pic'), updateProfilePicture);
 
 // route for the todo list page 
 router
