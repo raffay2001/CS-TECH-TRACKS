@@ -1,33 +1,49 @@
 <%- include('partials/header.ejs') %>
 
-
-
-  <div class="container-fluid">
-    <h3 class="text-center ">Create Your Own Blog</h3>
-    <form class="row g-3">
-      <div class="col-md-12">
-        <label class="custom-label" for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="title">
+  <!-- For Showing Success Messages -->
+  <% if (messages.success_msg) { %>
+    <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
+      <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= messages.success_msg %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
+    </div>
+    <% } %>
+    
+    <h1 class="text-center blog-heading mt-5 mb-5">Post a Blog</h1>
+    
+    <div class="container mb-5 pb-5">
+        <form action="#" method="POST" class="row g-3 mb-5">
 
-      <div class="col-12">
-        <label class="custom-label" for="headline" class="form-label">Headline</label>
-        <input type="text" class="form-control" id="headline">
-      </div>
-      <div class="col-12">
-        <label class="custom-label" for="img" class="form-label">Image URL</label>
-        <input type="text" class="form-control" id="headline">
-      </div>
+          <div class="input-div col-md-12">
+            <label class="custom-label-blog" for="title" class="form-label">Title</label>
+            <input type="text" id="title" name="title" required>
+          </div>
 
-      <div class="col-12">
-        <label class="custom-label" for="textArea" class="form-label">Content</label>
-        <textarea class="form-control" id="textArea" rows="100"></textarea>
-      </div>
-    </form>
-  </div>
-  <div class="d-grid gap-2 col-6 mx-auto mt-4  ">
-    <button type="submit" style="background-color:#4a44d7b3; color: white;height: 50px;" class="btn ">Post Blog</button>
-  </div>
+          <div class="input-div col-12">
+            <label class="custom-label-blog" for="headline" class="form-label">Category</label>
+            <input type="text" id="headline" name="tag" required>
+          </div>
+
+          <div class="input-div col-12">
+            <label class="custom-label-blog" for="img" class="form-label">Image URL</label>
+            <input type="text" id="headline" name="picture" required>
+          </div>
 
 
-<%- include('partials/footer.ejs') %>
+          <div class="input-div col-12">
+            <label class="custom-label-blog" for="textArea" class="form-label">Content</label>
+            <textarea id="textArea" class="blog-content-input" rows="10" name="content" required></textarea>
+          </div>
+
+          <div class="d-grid gap-2 col-6 mx-auto mt-4  ">
+            <button type="submit" class="btn post-btn">Post Blog</button>
+          </div>
+
+
+        </form>
+    </div>
+
+
+
+      <%- include('partials/footer.ejs') %>

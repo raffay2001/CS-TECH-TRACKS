@@ -9,29 +9,14 @@
 
         <!-- Whole Blog  -->
         <div class="card-body">
-          <h1 class="blog-name card-title blog-detail-title mt-0">Blog Title</h1>
+          <h1 class="blog-name card-title blog-detail-title mt-0"><%= blog['title'] %></h1>
           <h5 class="text-dark px-1 pt-2">Category:</h5>
           <span
             style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
-            class="badge rounded-pill mb-3">PHOTOGRAPHY</span>
-          <img style=" width: 100%;object-fit: cover; height: 450px;" src="images/keith-tanner-zOwj7ZXDfLc-unsplash.jpg"
-            class="card-img-top" alt="...">
-          <p class="blog-content card-text" style="font-size: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Voluptatum,
-            accusamus explicabo ipsum ipsa veritatis animi sed illum id aspernatur deleniti perferendis omnis iure, eum
-            aperiam architecto. Corrupti odit dolorum quibusdam dolorem delectus fugiat ratione ab provident, corporis
-            et, deleniti maxime harum. Harum, deserunt. Totam laboriosam ullam sit aperiam quibusdam nobis unde
-            distinctio vitae veritatis id. Harum suscipit reiciendis saepe officia quisquam laborum earum cumque minima,
-            eum a minus eveniet adipisci provident eligendi accusantium iste magni ducimus similique officiis alias
-            recusandae dignissimos natus. Tenetur sapiente odio illum porro atque dolore assumenda quis? Fugiat
-            voluptatibus ea ut facere? Distinctio molestias reiciendis id? Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Vel sit, dolor ab dolores ducimus animi vero aspernatur temporibus suscipit voluptate.
-            Reiciendis eos in exercitationem nostrum voluptatum iure ea nemo vitae quae fugit eius debitis aperiam
-            obcaecati voluptatibus expedita modi consequuntur sapiente, voluptas quibusdam asperiores neque aut incidunt
-            laboriosam. Dignissimos totam, ab quibusdam enim, nobis quidem corporis ullam sunt aut excepturi
-            perspiciatis placeat numquam esse quos, est quia officia voluptatum vel adipisci ut id suscipit perferendis
-            distinctio ipsam! Expedita iste vitae doloribus sit alias earum quod eveniet sequi beatae numquam, maxime
-            nulla consectetur minus, natus totam explicabo incidunt autem commodi ex.</p>
+            class="badge rounded-pill mb-3"><%= blog['tag'] %></span>
+          <img style=" width: 100%;object-fit: cover; height: 450px;" src="<%= blog['picture'] %>"
+            class="card-img-top" alt="blog-pic">
+          <p class="blog-content card-text" style="font-size: 1rem;"><%= blog['content'] %></p>
         </div>
 
 
@@ -112,12 +97,12 @@
           <div style="padding-left: 10px;">
             <p class="m-0 p-0 small-font-size">Posted by : </p>
             <div class="mt-1">
-              <img style="border-radius: 50%; height: 50px;" class="comment-author-picture" src="images/person1.jpg"
+              <img style="border-radius: 50%; height: 50px;" class="comment-author-picture" src="data:image/png;base64,<%= user['picture'] %>"
                 alt="">
-              <p class="d-inline m-0 p-0 small-font-size"><strong>Lyna John</strong></p>
+              <p class="d-inline m-0 p-0 small-font-size"><strong><%= user['name'] %></strong></p>
             </div>
             <div class="mt-1">
-              at May 28, 2022
+              <%= blog['created_at'] %>
             </div>
           </div>
         </div>
@@ -144,4 +129,4 @@
   </div>
 
 
-  <%- include('partials/footer.ejs') %>
+<%- include('partials/footer.ejs') %>

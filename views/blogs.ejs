@@ -10,48 +10,48 @@
 
     <div class="row gx-3 gy-3 pt-0 mt-0">
 
-      <a href="/blog:1" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
-        <div class="p-2">
+      <% for(let i = 0; i < blogs.length; i++){ %>
+        <a href="/blog?id=<%= blogs[i]['id'] %>" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
+          <div class="p-2">
 
-          <div class="border-1 card blog-parent shadow">
-            <img style="height: 13.178rem; border-radius: 12px 12px 0px 0px;" src="https://storage.googleapis.com/domains-goog-prod/exports/2019-08-02/tld/tech/header.png"
-              class="card-img-top" alt="card-img">
-            <div class="card-body">
-              <span
-                style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
-                class="badge rounded-pill">PHOTOGRAPHY</span>
-              <h4 style="font-size: 1.5rem;" class="card-title pt-3 mt-2 pb-0 mb-0 display-5 hero-head blog-title">
-                What Is Lifestyle Product Photography?
-              </h4>
-              <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
-                class="card-text pt-0 pb-1 mt-3 hero-para_1">
-                Lifestyle images can help scale your brand, improve your engagement, attract new
-                customers,
-                and increase your conversion rate. Learn how here.
-              </p>
-              <div class="pt-3 d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center p-1">
-                  <img style="width: 4rem; height: 2.5rem;" src="images/person1.jpg" alt="img"
-                    class="d-block img-fluid rounded-circle">
-                  <h6 style="padding-top: 0.3rem; padding-left: 0.7rem; font-size: 1rem;" class="display-6 hero-head author-name">
-                    Alex Banks
-                  </h6>
+            <div class="border-1 card blog-parent shadow">
+              <img style="height: 13.178rem; border-radius: 12px 12px 0px 0px;" src="<%= blogs[i]['picture'] %>"
+                class="card-img-top" alt="card-img">
+              <div class="card-body">
+                <span
+                  style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
+                  class="badge rounded-pill"><%= blogs[i]['tag'] %></span>
+                <h4 style="font-size: 1.5rem;" class="card-title pt-3 mt-2 pb-0 mb-0 display-5 hero-head blog-title">
+                  <%= blogs[i]['title'] %>
+                </h4>
+                <div class="pt-3 d-flex align-items-center justify-content-between">
+                  <% for(let j = 0; j<users.length; j++){ %>
+                    <% if( blogs[i]['user_id'] === users[j]['id'] ){ %>
+                      <div class="d-flex align-items-center p-1">
+                        <img style="width: 4rem; height: 2.5rem;" src="data:image/png;base64,<%= users[j]['picture'] %>" alt="img"
+                          class="d-block img-fluid rounded-circle">
+                        <h6 style="padding-top: 0.3rem; padding-left: 0.7rem; font-size: 1rem;" class="display-6 hero-head author-name">
+                          <%= users[j]['name'] %>
+                        </h6>
+                      </div>
+                    <% } %>
+                  <% } %>
+
+                  <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                    class="card-text p-0 m-0 hero-para_1">
+                    <%= blogs[i]['created_at'] %>
+                  </p>
                 </div>
-
-                <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
-                  class="card-text p-0 m-0 hero-para_1">
-                  April 17, 2021
-                </p>
               </div>
+              
+
             </div>
-            
 
           </div>
+        </a>
+      <% } %>
 
-        </div>
-      </a>
-
-      <a href="/blog:1" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
+      <!-- <a href="/blog:1" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
         <div class="p-2">
 
           <div class="border-1 card shadow blog-parent">
@@ -126,7 +126,7 @@
           </div>
 
         </div>
-      </a>
+      </a> -->
 
     </div>
 

@@ -12,7 +12,8 @@ const { roadmapController } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
 const { showBlog } = require('../controllers/blogController');
-const { addBlog } = require('../controllers/blogController');
+const { showBlogForm } = require('../controllers/blogController');
+const { submitBlog } = require('../controllers/blogController');
 const { profileController } = require('../controllers/profileController');
 const { updateProfile } = require('../controllers/profileController');
 const { updateProfilePicture } = require('../controllers/profileController');
@@ -90,13 +91,14 @@ router
 
 // route for the individual blog 
 router
-    .route('/blog:id')
+    .route('/blog')
     .get(checkNotAuthenticated, showBlog);
 
 // route for posting a blog 
 router 
     .route('/post-blog')
-    .get(checkNotAuthenticated, addBlog);
+    .get(checkNotAuthenticated, showBlogForm)
+    .post(checkNotAuthenticated, submitBlog);
 
     
 
