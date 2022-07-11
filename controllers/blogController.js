@@ -30,6 +30,7 @@ const showBlog = async (req, res) => {
         'is_authenticated': true,
         'name': req.user.name,
         'picture': req.user.picture,
+        'logged_in_user_id': req.user.id 
     }
     const blog_id = req.query.id;
     const user_id = req.user.id;
@@ -45,9 +46,27 @@ const showBlog = async (req, res) => {
     const blogPublishDate = `at ${dateList[2]}-${dateList[1]}-${dateList[3]} on ${dateList[0]}`;
     blog['created_at'] = blogPublishDate;
 
+    const commentList = await pool.query(`SELECT * FROM comment WHERE blog_id = $1`, [blog_id]);
+    const allBlogComments = commentList.rows;
+    const reversedallBlogComments = allBlogComments.reverse();
+    const commentAuthors = await pool.query(`SELECT name, id, picture FROM users WHERE id IN (SELECT user_id FROM comment WHERE blog_id = $1)`, [blog_id]);
+    const commentAuthorsList = commentAuthors.rows;
+
+
+
+    for (let i = 0; i < allBlogComments.length; i++) {
+        const rawDate = allBlogComments[i]['created_at'];
+        const date = `${rawDate}`;
+        const dateList = date.split(' ');
+        const commentPublishDate = `${dateList[2]}-${dateList[1]}-${dateList[3]} on ${dateList[0]}`;
+        allBlogComments[i]['created_at'] = commentPublishDate;
+    }
+
     context['title'] = blog['title'];
     context['blog'] = blog;
     context['user'] = user;
+    context['comment_users'] = commentAuthorsList;
+    context['comments'] = reversedallBlogComments;
     res.render('blog_detail', context);
 
 }
@@ -60,9 +79,6 @@ const showBlogForm = async (req, res) => {
         'name': req.user.name,
         'picture': req.user.picture,
     }
-
-    // code for inserting the blog in the database 
-
     res.render('add_blog', context);
 
 }
@@ -80,9 +96,28 @@ const submitBlog = async (req, res) => {
     res.redirect('/post-blog');
 }
 
+const submitComment = async (req, res) => {
+    const user_id = req.user.id;
+    const blog_id = req.query.id;
+    const {content} = req.body;
+    await pool.query(`INSERT INTO comment (content, user_id, blog_id) VALUES ($1, $2, $3);`, [content, user_id, blog_id]);
+    req.flash('success_msg', 'Comment Posted!');
+    res.redirect(`/blog?id=${blog_id}`);
+}
+
+const deleteComment = async (req, res) => {
+    const comment_id = req.query.comment_id;
+    const blog_id = req.query.blog_id;
+    await pool.query(`DELETE FROM comment WHERE id = $1`, [comment_id]);
+    req.flash('success_msg', 'Comment Deleted Successfully!');
+    res.redirect(`/blog?id=${blog_id}`);
+}
+
 module.exports = {
     blogController,
     showBlog,
     showBlogForm,
-    submitBlog
+    submitBlog,
+    submitComment,
+    deleteComment
 }

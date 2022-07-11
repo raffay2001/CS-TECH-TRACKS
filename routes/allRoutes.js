@@ -14,6 +14,8 @@ const { blogController } = require('../controllers/blogController');
 const { showBlog } = require('../controllers/blogController');
 const { showBlogForm } = require('../controllers/blogController');
 const { submitBlog } = require('../controllers/blogController');
+const {submitComment} = require('../controllers/blogController');
+const {deleteComment} = require('../controllers/blogController');
 const { profileController } = require('../controllers/profileController');
 const { updateProfile } = require('../controllers/profileController');
 const { updateProfilePicture } = require('../controllers/profileController');
@@ -92,7 +94,13 @@ router
 // route for the individual blog 
 router
     .route('/blog')
-    .get(checkNotAuthenticated, showBlog);
+    .get(checkNotAuthenticated, showBlog)
+    .post(checkNotAuthenticated, submitComment);
+
+// route for deleting a comment 
+router
+    .route('/delete-comment')
+    .get(checkNotAuthenticated, deleteComment);
 
 // route for posting a blog 
 router 
