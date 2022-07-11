@@ -1,16 +1,23 @@
 <%- include('partials/header.ejs') %>
 
-  <div class="container-fluid " style="  padding: 0%; height: auto ; overflow: hidden; width: 100%;">
+  <div class="container-fluid" style="padding: 25px; height: auto ; overflow: hidden; width: 100%;">
+
     <div class="row">
-      <div class="card border-0 mb-3">
-        <img style=" width: 100%;object-fit: cover; height: 450px;" src="images/keith-tanner-zOwj7ZXDfLc-unsplash.jpg"
-          class="card-img-top" alt="...">
-        <div class="card-body ">
-          <h5 class="blog-name card-title text-center ">Blog Title</h5>
-          <p class="blog-headline card-text text-center">This is blog headline, Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempore quia commodi nesciunt error, repudiandae harum quibusdam quos amet libero
-            suscipit!</p>
-          <p class="blog-content card-text ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+
+      <!-- Blog Details And Comments  -->
+      <div class="col-md-8 col-12 card border-0 mb-3">
+
+        <!-- Whole Blog  -->
+        <div class="card-body">
+          <h1 class="blog-name card-title blog-detail-title mt-0">Blog Title</h1>
+          <h5 class="text-dark px-1 pt-2">Category:</h5>
+          <span
+            style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
+            class="badge rounded-pill mb-3">PHOTOGRAPHY</span>
+          <img style=" width: 100%;object-fit: cover; height: 450px;" src="images/keith-tanner-zOwj7ZXDfLc-unsplash.jpg"
+            class="card-img-top" alt="...">
+          <p class="blog-content card-text" style="font-size: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Voluptatum,
             accusamus explicabo ipsum ipsa veritatis animi sed illum id aspernatur deleniti perferendis omnis iure, eum
             aperiam architecto. Corrupti odit dolorum quibusdam dolorem delectus fugiat ratione ab provident, corporis
             et, deleniti maxime harum. Harum, deserunt. Totam laboriosam ullam sit aperiam quibusdam nobis unde
@@ -26,63 +33,115 @@
             distinctio ipsam! Expedita iste vitae doloribus sit alias earum quod eveniet sequi beatae numquam, maxime
             nulla consectetur minus, natus totam explicabo incidunt autem commodi ex.</p>
         </div>
-        <div class="col-12 text-center text-muted" style="max-width: 100%; overflow-x:hidden; ">
-          <p class="d-inline  " style="font-size: 1.6rem; font-style: italic;">Published By : </p>
-          <img style="border-radius: 50%; height: 60px; " src="images/w.jpg" alt="">
-          <p class=" d-inline" style="font-size: 1.4rem;">UserName</p>
-          
+
+
+        <!-- All Comments and Comment Form  -->
+        <div class="card-body container-fluid mb-5">
+
+          <h2 class="blog-name card-title comment-title mt-0 pt-0">Comments</h2>
+
+          <div class="container-fluid">
+
+            <!-- All Comments -->
+            <div class="row" style="max-width: 100%; overflow-x: hidden;">
+
+
+              <div class="card mb-2 py-1">
+                <div class="col-12" style="max-width: 100%; overflow-x:hidden;">
+                  <img style="border-radius: 50%; height: 50px;" src="images/person1.jpg" alt="">
+                  <p style="display: inline; margin-left: 10px; font-size: 1rem;">UserName</p>
+                </div>
+                <div class="col-12 mt-0 mb-0"
+                  style="margin-left:65px;overflow-x:hidden;height: auto; font-size:1rem; max-width:100%;">
+                  <span>comment,
+                    Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sit?</span>
+                </div>
+                <div class="col-12 mt-1 mb-0"
+                  style="margin-left:65px;overflow-x:hidden;height: auto; font-size:1rem; max-width:100%;">
+                  <span><i>May 28,2022</i></span>
+                  <br>
+                  <a href="#"><span class="badge rounded-pill bg-danger">Delete</span></a>
+                </div>
+              </div>
+
+              <div class="card mb-2 py-1">
+                <div class="col-12" style="max-width: 100%; overflow-x:hidden;">
+                  <img style="border-radius: 50%; height: 50px;" src="images/person1.jpg" alt="">
+                  <p style="display: inline; margin-left: 10px; font-size: 1rem;">UserName</p>
+                </div>
+                <div class="col-12 mt-0 mb-0"
+                  style="margin-left:65px;overflow-x:hidden;height: auto; font-size:1rem; max-width:100%;">
+                  <span>comment,
+                    Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sit?</span>
+                </div>
+                <div class="col-12 mt-1 mb-0"
+                  style="margin-left:65px;overflow-x:hidden;height: auto; font-size:1rem; max-width:100%;">
+                  <span><i>May 28,2022</i></span>
+                  <br>
+                  <a href="#"><span class="badge rounded-pill bg-danger">Delete</span></a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Comment Form  -->
+            <div class="row">
+              <form action="#" method="POST">
+                <div class="input-group mb-3 mt-5">
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder="Write your Comment"
+                    style="border:2px solid lightgrey; height:53px; width:300px;">
+                  <button type="submit" class="btn btn-lg text-white " id="post"
+                    style="background-color: rgba(74,68,215,0.7) !important; width: 100px;">Post</button>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
         </div>
       </div>
 
+      <!-- Author Details and More Blogs Links  -->
+      <div class="col-12 col-md-4 p-5">
 
+        <!-- Author Details  -->
+        <div class="mt-2 card p-2">
+          <div style="padding-left: 10px;">
+            <p class="m-0 p-0 small-font-size">Posted by : </p>
+            <div class="mt-1">
+              <img style="border-radius: 50%; height: 50px;" class="comment-author-picture" src="images/person1.jpg"
+                alt="">
+              <p class="d-inline m-0 p-0 small-font-size"><strong>Lyna John</strong></p>
+            </div>
+            <div class="mt-1">
+              at May 28, 2022
+            </div>
+          </div>
+        </div>
+
+        <!-- More Blogs Cards -->
+        <div class="mt-2 p-2">
+          <h4 class="mt-1">More Blogs:</h4>
+          <!-- More Blogs Cards To be Added  -->
+        </div>
+
+        <!-- Post a Blog Button  -->
+        <div class="mt-2 p-2">
+          <a href="/post-blog">
+            <span
+            style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
+            class="badge rounded-pill mb-3">Post a Blog</span>
+          </a>
+        </div>
+
+      </div>
 
     </div>
 
-
-
-  </div>
-
-  <div class="container-fluid mb-5 pb-3">
-    <h2 class="text-center mt-5 pt-3 mb-5">Comments</h2>
-    <div class=" container">
-      <div class="row" style="max-width: 100%; overflow-x: hidden;">
-        <hr>
-        <div class="col-12" style="max-width: 100%; overflow-x:hidden;">
-          <img style="border-radius: 50%; height: 70px;" src="images/person1.jpg" alt="">
-          <p style="display: inline; margin-left: 15px; font-size: 1.2rem;">UserName</p>
-        </div>
-        <div class="col-12 mt-3 mb-3"
-          style="margin-left:89px;overflow-x:hidden;height: auto; font-size:1.1rem; max-width:100%;">comment, Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sit?</div>
-        <p class="text-muted" style="margin-left: 89px;">Posted on #date#</p>
-        <hr>
-
-        <div class="col-12" style="max-width: 100%; overflow-x:hidden;">
-          <img style="border-radius: 50%; height: 70px;" src="images/person1.jpg" alt="">
-          <p style="display: inline; margin-left: 15px; font-size: 1.2rem;">UserName</p>
-        </div>
-        <div class="col-12 mt-3 mb-3"
-          style="margin-left:89px;overflow-x:hidden;height: auto; font-size:1.1rem; max-width:100%;">comment, Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sit?</div>
-        <p class="text-muted" style="margin-left: 89px;">Posted on #date#</p>
-
-        <hr>
-
-
-      </div>
-      <div class="row">
-        <div class="input-group mb-3 mt-5">
-          <input type="text" class="form-control" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default" placeholder="Type a comment"
-            style="border:2px solid lightgrey; height:53px; width:300px;">
-          <button class="btn btn-lg text-white " id="post"
-            style="background-color: rgba(74,68,215,0.7) !important; width: 100px;">Post</button>
-        </div>
-
-      </div>
-
-    </div>
   </div>
 
 
-<%- include('partials/footer.ejs') %>
+  <%- include('partials/footer.ejs') %>

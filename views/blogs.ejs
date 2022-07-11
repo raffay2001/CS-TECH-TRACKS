@@ -1,79 +1,138 @@
 <%- include('partials/header.ejs') %>
 
 
-  <h1 class="text-center mt-5 pt-3 mb-5">Our Blogs</h1>
+  <h1 class="text-center mt-5 pt-3 mb-3 blog-heading">Our Blogs</h1>
 
+  <!-- BLOG CARDS SECTON  -->
+  <section
+    class="container-fluid d-flex justify-content-center align-items-center flex-column blog-posts mt-0 pt-0 pb-5 mb-5"
+    id="blog-posts">
 
-  <div class="container pb-5 mb-5 pt-3">
-    <div class="row gy-5 mb-5 pb-5" style="height: auto; overflow:hidden; ">
-      <div class="col-sm-4 text-center">
-        <div class="card border-0 " style="background-color:#bbbbd5b3;">
-          <div class="card-body">
-            <img src="images/finde-zukunft-W1lkzFvXxIs-unsplash.jpg" class="card-img-top" alt="..." height="300px">
-            <p style="font-size: 23px; padding-top:12px;">Headline</p>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <p>#date#</p>
-            <a href="blog_detail.html" class="btn btn-lg text-white" style="background-color: #726fb7b3;">Read More</a>
+    <div class="row gx-3 gy-3 pt-0 mt-0">
+
+      <a href="/blog:1" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
+        <div class="p-2">
+
+          <div class="border-1 card blog-parent shadow">
+            <img style="height: 13.178rem; border-radius: 12px 12px 0px 0px;" src="https://storage.googleapis.com/domains-goog-prod/exports/2019-08-02/tld/tech/header.png"
+              class="card-img-top" alt="card-img">
+            <div class="card-body">
+              <span
+                style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
+                class="badge rounded-pill">PHOTOGRAPHY</span>
+              <h4 style="font-size: 1.5rem;" class="card-title pt-3 mt-2 pb-0 mb-0 display-5 hero-head blog-title">
+                What Is Lifestyle Product Photography?
+              </h4>
+              <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                class="card-text pt-0 pb-1 mt-3 hero-para_1">
+                Lifestyle images can help scale your brand, improve your engagement, attract new
+                customers,
+                and increase your conversion rate. Learn how here.
+              </p>
+              <div class="pt-3 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center p-1">
+                  <img style="width: 4rem; height: 2.5rem;" src="images/person1.jpg" alt="img"
+                    class="d-block img-fluid rounded-circle">
+                  <h6 style="padding-top: 0.3rem; padding-left: 0.7rem; font-size: 1rem;" class="display-6 hero-head author-name">
+                    Alex Banks
+                  </h6>
+                </div>
+
+                <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                  class="card-text p-0 m-0 hero-para_1">
+                  April 17, 2021
+                </p>
+              </div>
+            </div>
+            
+
           </div>
+
         </div>
-      </div>
-      <div class="col-sm-4 text-center">
-        <div class="card border-0 ">
-          <div class="card-body">
-            <img src="images/finde-zukunft-W1lkzFvXxIs-unsplash.jpg" class="card-img-top" alt="..." height="300px">
-            <p style="font-size: 23px; padding-top:12px;">Headline</p>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <p>#date#</p>
-            <a href="blog_detail.html" class="btn btn-lg text-white" style="background-color: #726fb7b3;">Read More</a>
+      </a>
+
+      <a href="/blog:1" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
+        <div class="p-2">
+
+          <div class="border-1 card shadow blog-parent">
+            <img style="height: 13.178rem; border-radius: 12px 12px 0px 0px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT6NhYQwFnmITvauhHExdfAQkilGSZyia0E0Z2EBT6CNUu_JD9BvFMcHXzfIReQyZfhZE&usqp=CAU"
+              class="card-img-top" alt="card-img">
+            <div class="card-body">
+              <span
+                style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
+                class="badge rounded-pill">BUSINESS</span>
+              <h4 style="font-size: 1.5rem;" class="card-title pt-3 mt-2 pb-0 mb-0 display-5 hero-head blog-title">
+                2021: New Year, New Content Plans, New Pricing
+              </h4>
+              <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                class="card-text pt-0 pb-1 mt-3 hero-para_1">
+                A quick guide to the new pricing and services we are offering in 2021.
+              </p>
+              <div class="pt-3 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center p-1">
+                  <img style="width: 4rem; height: 2.5rem;" src="images/person1.jpg" alt="img"
+                    class="d-block img-fluid rounded-circle">
+                  <h6 style="padding-top: 0.3rem; padding-left: 0.7rem; font-size: 1rem;" class="display-6 hero-head author-name">
+                    Alex Banks
+                  </h6>
+                </div>
+
+                <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                  class="card-text p-0 m-0 hero-para_1">
+                  April 17, 2021
+                </p>
+              </div>
+            </div>
+
           </div>
+
         </div>
-      </div>
-      <div class="col-sm-4 text-center  ">
-        <div class="card border-0  " style="background-color:#bbbbd5b3;">
-          <div class="card-body">
-            <img src="images/finde-zukunft-W1lkzFvXxIs-unsplash.jpg" class="card-img-top" alt="..." height="300px">
-            <p style="font-size: 23px; padding-top:12px;">Headline</p>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <p>#date#</p>
-            <a href="blog_detail.html" class="btn btn-lg text-white" style="background-color: #726fb7b3;">Read More</a>
+      </a>
+
+      <a href="/blog:1" class="blog-card d-block col-lg-4 col-12 d-flex justify-content-center">
+        <div class="p-2">
+
+          <div class="border-1 card shadow blog-parent">
+            <img style="height: 13.178rem; border-radius: 12px 12px 0px 0px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-N2WyYHe7BzouwkS-RqH6rSTB8cJ9hZQQz0VnEUQSq9oqPrQirKULBVIdYdzNS2RzbkI&usqp=CAU"
+              class="card-img-top" alt="card-img">
+            <div class="card-body">
+              <span
+                style="font-family: 'Montserrat', 'sans-serif'; font-size: 0.7rem;font-weight: 500; background-color: rgba(74,68,215,0.7); padding: 0.632rem 0.95rem 0.632rem 0.95rem;"
+                class="badge rounded-pill">SOCIAL MEDIA</span>
+              <h4 style="font-size: 1.5rem;" class="card-title pt-3 mt-2 pb-0 mb-0 display-5 hero-head blog-title">
+                How To Increase Your Paid Social Performance in 2021
+              </h4>
+              <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                class="card-text pt-0 pb-1 mt-3 hero-para_1">
+                Some top tips on how to increase your paid social performance from our team of
+                experts.
+              </p>
+              <div class="pt-3 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center p-1">
+                  <img style="width: 4rem; height: 2.5rem;" src="images/person1.jpg" alt="img"
+                    class="d-block img-fluid rounded-circle">
+                  <h6 style="padding-top: 0.3rem; padding-left: 0.7rem; font-size: 1rem;" class="display-6 hero-head author-name">
+                    Alex Banks
+                  </h6>
+                </div>
+
+                <p style="font-family: 'Poppins' 'sans-serif'; font-size: 0.95rem;"
+                  class="card-text p-0 m-0 hero-para_1">
+                  April 17, 2021
+                </p>
+              </div>
+            </div>
+
           </div>
+
         </div>
-      </div>
-      <div class="col-sm-4 text-center">
-        <div class="card border-0" style="background-color:#bbbbd5b3;">
-          <div class="card-body">
-            <img src="images/finde-zukunft-W1lkzFvXxIs-unsplash.jpg" class="card-img-top" alt="..." height="300px">
-            <p style="font-size: 23px; padding-top:12px;">Headline</p>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <p>#date#</p>
-            <a href="blog_detail.html" class="btn  btn-lg text-white" style="background-color: #726fb7b3;">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 text-center">
-        <div class="card border-0 ">
-          <div class="card-body">
-            <img src="images/finde-zukunft-W1lkzFvXxIs-unsplash.jpg" class="card-img-top" alt="..." height="300px">
-            <p style="font-size: 23px; padding-top:12px;">Headline</p>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <p>#date#</p>
-            <a href="blog_detail.html" class="btn btn-lg text-white " style="background-color: #726fb7b3;">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 text-center">
-        <div class="card border-0" style="background-color:#bbbbd5b3;">
-          <div class="card-body">
-            <img src="images/finde-zukunft-W1lkzFvXxIs-unsplash.jpg" class="card-img-top" alt="..." height="300px">
-            <p style="font-size: 23px; padding-top:12px;">Headline</p>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <p>#date#</p>
-            <a href="blog_detail.html" class="btn btn-lg text-white" style="background-color: #726fb7b3;">Read More</a>
-          </div>
-        </div>
-      </div>
+      </a>
+
     </div>
-  </div>
 
- 
-<%- include('partials/footer.ejs') %>
+
+
+  </section>
+
+
+  <%- include('partials/footer.ejs') %>

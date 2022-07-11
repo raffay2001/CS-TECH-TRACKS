@@ -11,6 +11,8 @@ const { showAboutUsPage } = require('../controllers/aboutUsController');
 const { roadmapController } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
+const { showBlog } = require('../controllers/blogController');
+const { addBlog } = require('../controllers/blogController');
 const { profileController } = require('../controllers/profileController');
 const { updateProfile } = require('../controllers/profileController');
 const { updateProfilePicture } = require('../controllers/profileController');
@@ -43,6 +45,7 @@ function checkAuthenticated(req, res, next) {
 router
     .route('/')
     .get(showIndexPage);
+
 
 // route for sign up 
 router
@@ -84,6 +87,18 @@ router
 router
     .route('/blogs')
     .get(checkNotAuthenticated, blogController);
+
+// route for the individual blog 
+router
+    .route('/blog:id')
+    .get(checkNotAuthenticated, showBlog);
+
+// route for posting a blog 
+router 
+    .route('/post-blog')
+    .get(checkNotAuthenticated, addBlog);
+
+    
 
 // route for rendering the profile page 
 router

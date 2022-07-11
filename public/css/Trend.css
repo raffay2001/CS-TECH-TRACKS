@@ -286,7 +286,7 @@
 
  .trend-parent{
   border-radius: 15px !important;
-  border: 0.15px solid rgba(50, 50, 50, 0.4) !important;
+  /* border: 0.15px solid rgba(50, 50, 50, 0.4) !important; */
   transition-property: all;
   transition-duration: 0.05s;
   transition-timing-function: ease-in-out;
