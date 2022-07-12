@@ -12,6 +12,7 @@ const { roadmapController } = require('../controllers/roadmapController');
 const { showRoadmap } = require('../controllers/roadmapController');
 const { showGuidedProject } = require('../controllers/roadmapController');
 const { showQuiz } = require('../controllers/roadmapController');
+const { markMilestoneAsDone } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
 const { showBlog } = require('../controllers/blogController');
@@ -86,6 +87,11 @@ router
 router
     .route('/roadmap')
     .get(checkNotAuthenticated, showRoadmap);
+
+// route for marking the milestone as done 
+router
+    .route('/mark-as-done')
+    .get(checkNotAuthenticated, markMilestoneAsDone);
 
 // route for the guided project of the roadmap 
 router
