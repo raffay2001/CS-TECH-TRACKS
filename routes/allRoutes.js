@@ -9,6 +9,9 @@ const { loginController } = require('../controllers/authController');
 const { createUser } = require('../controllers/authController');
 const { showAboutUsPage } = require('../controllers/aboutUsController');
 const { roadmapController } = require('../controllers/roadmapController');
+const { showRoadmap } = require('../controllers/roadmapController');
+const { showGuidedProject } = require('../controllers/roadmapController');
+const { showQuiz } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
 const { showBlog } = require('../controllers/blogController');
@@ -80,6 +83,19 @@ router
     .get(checkNotAuthenticated, roadmapController);
 
 // for individual roadmap 
+router
+    .route('/roadmap')
+    .get(checkNotAuthenticated, showRoadmap);
+
+// route for the guided project of the roadmap 
+router
+    .route('/guided-project')
+    .get(checkNotAuthenticated, showGuidedProject)
+
+// route for the quiz of the roadmap
+router
+    .route('/quiz')
+    .get(checkNotAuthenticated, showQuiz)
 
 // route for trends page 
 router

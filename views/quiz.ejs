@@ -1,41 +1,64 @@
 <%- include('partials/header.ejs') %>
 
 
-  <section class="u-align-left u-clearfix u-image u-section-1" src="" id="sec-6c19" data-image-width="7500"
-    data-image-height="5000">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <div class="u-align-center u-container-style u-custom-color-1 u-group u-opacity u-opacity-65 u-group-1">
-        <div class="u-container-layout u-container-layout-1">
-          <h4 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Quiz </h4>
-        </div>
+  <div class="container d-flex justify-content-center mb-5 pb-5 mt-5">
+    <div>
+      <div class="mt-1 mb-2">
+        <img src="images/4398.jpg" class="img-fluid" id="quiz-image" alt="quiz-image">
+      </div>
+      <div class="pt-2 pb-2">
+        <h1 class="mt-4 mb-2 text-center" id="quiz-heading">Quiz</h1>
+        <!-- Quiz Form  -->
+        <form action="#" method="POST" class="mt-5">
+          <p class="my-0">Question 1:</p>
+
+          <div class="form-check">
+            <div style="padding-top: 0.5rem;">
+              <input class="form-check-input" type="radio"
+                name="options" id="radio-1">
+              <label class="form-check-label" for="radio-1">
+                Option 1
+              </label>
+            </div>
+          </div>
+
+
+          <div class="form-check">
+            <div style="padding-top: 0.5rem;">
+              <input class="form-check-input" type="radio"
+                name="options" id="radio-2">
+              <label class="form-check-label" for="radio-2">
+                Option 2
+              </label>
+            </div>
+          </div>
+
+
+          <div class="form-check">
+            <div style="padding-top: 0.5rem;">
+              <input class="form-check-input" type="radio"
+                name="options" id="radio-3">
+              <label class="form-check-label" for="radio-3">
+                Option 3
+              </label>
+            </div>
+          </div>
+
+
+          <div class="form-check">
+            <div style="padding-top: 0.5rem;">
+              <input class="form-check-input" type="radio"
+                name="options" id="radio-4">
+              <label class="form-check-label" for="radio-4">
+                Option 4
+              </label>
+            </div>
+          </div>
+
+
+        </form>
       </div>
     </div>
-  </section>
-  <section class="u-clearfix u-section-2" id="sec-351a">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h3 class="u-custom-font u-font-merriweather u-text u-text-custom-color-1 u-text-default u-text-1">Roadmap name
-      </h3>
-      <ol class="u-text u-text-default u-text-2">
-        <li>
-          <span style="font-weight: 700; "> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed<span
-              style="font-weight: 700; "></span>
-          </span>
-          <span style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">
-            <br><br>
-            <input type="radio" name="opt"></span> option 1
-          
-            <br>
-            <input type="radio" name="opt"></span> option 2
-            </br>
-            <input type="radio" name="opt"></span> option 3
-            <br>
-            <input type="radio" name="opt"></span> option 4
-            </br>
-
-          </span>
-        </li>
-      </ol>
-    </div>
-  </section>
+  </div>
 
 <%- include('partials/footer.ejs') %>
