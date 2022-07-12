@@ -119,6 +119,10 @@
                 style="padding: 18px 4px;">Services</a>
               <div class="u-nav-popup">
                 <ul class="u-custom-font u-font-montserrat u-h-spacing-51 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+                  <% if(is_authenticated){ %>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/user-roadmaps">My Roadmaps</a>
+                    </li>
+                  <% } %>
                   <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/trends">Trends</a>
                   </li>
                   <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="/blogs">Blogs</a>

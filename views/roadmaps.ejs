@@ -27,6 +27,11 @@
               <a href="/roadmap?id=<%= roadmaps[i]['id'] %>">
                 <button class="mt-0 trend-btn mb-3">View Roadmap</button>
               </a>
+              <% if(roadmaps[i]['pickRoadmapButtonFlag']){ %>
+                <a href="/pick-roadmap?id=<%= roadmaps[i]['id'] %>">
+                  <button class="mt-0 btn btn-secondary w-100 pick-roadmap-btn mb-3">Pick Roadmap</button>
+                </a>
+              <% } %>
             </div>
           </div>
         </div>  

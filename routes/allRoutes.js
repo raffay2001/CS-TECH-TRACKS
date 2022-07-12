@@ -10,6 +10,8 @@ const { createUser } = require('../controllers/authController');
 const { showAboutUsPage } = require('../controllers/aboutUsController');
 const { roadmapController } = require('../controllers/roadmapController');
 const { showRoadmap } = require('../controllers/roadmapController');
+const { pickRoadmap } = require('../controllers/roadmapController');
+const { showUserRoadmaps } = require('../controllers/roadmapController');
 const { showGuidedProject } = require('../controllers/roadmapController');
 const { showQuiz } = require('../controllers/roadmapController');
 const { markMilestoneAsDone } = require('../controllers/roadmapController');
@@ -87,6 +89,16 @@ router
 router
     .route('/roadmap')
     .get(checkNotAuthenticated, showRoadmap);
+
+// route for picking up a roadmap 
+router
+    .route('/pick-roadmap')
+    .get(checkNotAuthenticated, pickRoadmap)
+
+// route for rendering the user his or her own picked roadmaps 
+router
+    .route('/user-roadmaps')
+    .get(checkNotAuthenticated, showUserRoadmaps)
 
 // route for marking the milestone as done 
 router

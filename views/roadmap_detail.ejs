@@ -3,7 +3,7 @@
 
   <div class="container">
 
-      <!-- For Showing Success Messages -->
+    <!-- For Showing Success Messages -->
     <% if (messages.success_msg) { %>
       <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
         <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -11,74 +11,120 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </div>
-    <% } %>
+      <% } %>
 
-    <h3 class="text-center roadmap-heading my-0 pt-5"><%= title %>.</h3>
+        <h3 class="text-center roadmap-heading my-0 pt-5">
+          <%= title %>.
+        </h3>
 
-    <div class="links mb-3 mt-5">
-      <a href="/guided-project" class="roadmaps-btn mx-2">Guided Project</a>
-      <a href="/quiz" class="roadmaps-btn mx-2">Quiz</a>
-    </div>
+        <div class="links mb-3 pb-4 mt-5">
+          <!-- Pick Roadmap Button  -->
+          <% if( pickRoadmapButtonFlag ){ %>
+            <div>
+              <a href="/pick-roadmap?id=<%= roadmap['id'] %>">
+                <button class="mt-0 btn btn-secondary pick-roadmap-btn">Pick Roadmap</button>
+              </a>
+            </div>
+            <% } else{ %>
+              <div></div>
+            <% } %>
 
+            <% if(!pickRoadmapButtonFlag){%>
 
-    <div class="accordion mb-5 pb-5 pt-1" id="accordionExample">
-
-        <% for(let i = 0; i<milestones.length; i++){ %>
-
-          <div id="acc-item" class="mt-2 shadow rounded accordion-item">
-            <h2 class="accordion-header" id="heading<%= milestones[i]['id'] %>">
-              <button id="accordian-btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse<%= milestones[i]['id'] %>" aria-expanded="false" aria-controls="collapse<%= milestones[i]['id'] %>">
-                <span
-                  style="font-size: 1.3rem; font-family: 'Montserrat', sans-serif; font-family: 'Poppins', sans-serif; font-weight: 600;"
-                  class="fw-bold"><svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>&nbsp;&nbsp;<%= milestones[i]['title'] %></span>
-              </button>
-            </h2>
-            <div id="collapse<%= milestones[i]['id'] %>" class="accordion-collapse collapse" aria-labelledby="heading<%= milestones[i]['id'] %>"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p class="p-0 m-0 hero-para_1">
-                  <ol>
-                    <% for(let j = 0; j<resources.length; j++){ %>
-                      <% if(milestones[i]['id']===resources[j]['milestone_id']){ %>
-                            <div class="pb-2 pt-1">
-                              <li class="mb-2"><%= resources[j]['tagline'] %></li>
-                            <div class="mt-1">
-                              <a href="<%= resources[j]['link'] %>" class="view-more-btn" target="_blank">View More</a>
-                            </div>
-                            </div>
-                      <% } %>
-                    <% } %>
-                  </ol>
-                </p> <hr>
-                <% if(!milestones[i]['isdone']){ %>
-                  <div class="mt-4">
-                    <a href="/mark-as-done?roadmap_id=<%= roadmap['id'] %>&milestone_id=<%= milestones[i]['id'] %>" class="roadmaps-btn">Mark as Done</a>
-                  </div>
-                <% } else{ %>
-                  <div class="mt-4">
-                    <button style="cursor: auto;" role="link" aria-disabled="true" class="d-flex align-items-center justify-content-center completed-roadmaps-btn">
-                      <div>Completed</div>
-                      <img class="d-block img-fluid tick-image" src="images/tick.png" alt="tick">
-                    </button>
-                  </div>
+              <div>
+                <% if(isRoadmapDone){ %>
+                  <a href="/guided-project" class="roadmaps-btn mx-2">Guided Project</a>
+                  <a href="/quiz" class="roadmaps-btn mx-2">Quiz</a>
+                <% }else{ %>
+                  <a onclick="alert(`Please Complete the Roadmap Before Doing the Project :\\`); return false;" href="/guided-project" class="roadmaps-btn mx-2">Guided Project</a>
+                  <a onclick="alert(`Please Complete the Roadmap Before Attempting the Quiz :\\`); return false;" href="/quiz" class="roadmaps-btn mx-2">Quiz</a>
                 <% } %>
               </div>
+            
+            <% } else{ %>
+              
+              <div></div>
+
+            <% } %>
+
+        </div>
+
+
+        <div class="accordion pb-5 mb-5 pt-1" id="accordionExample">
+
+          <% for(let i=0; i<milestones.length; i++){ %>
+
+            <div id="acc-item" class="mt-2 shadow rounded accordion-item">
+              <h2 class="accordion-header" id="heading<%= milestones[i]['id'] %>">
+                <button id="accordian-btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse<%= milestones[i]['id'] %>" aria-expanded="false"
+                  aria-controls="collapse<%= milestones[i]['id'] %>">
+                  <span
+                    style="font-size: 1.3rem; font-family: 'Montserrat', sans-serif; font-family: 'Poppins', sans-serif; font-weight: 600;"
+                    class="fw-bold"><svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z" />
+                    </svg>&nbsp;&nbsp;<%= milestones[i]['title'] %></span>
+                </button>
+              </h2>
+              <div id="collapse<%= milestones[i]['id'] %>" class="accordion-collapse collapse"
+                aria-labelledby="heading<%= milestones[i]['id'] %>" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p class="p-0 m-0 hero-para_1">
+                  <ol>
+                    <% for(let j=0; j<resources.length; j++){ %>
+                      <% if(milestones[i]['id']===resources[j]['milestone_id']){ %>
+                        <div class="pb-2 pt-1">
+                          <li class="mb-2">
+                            <%= resources[j]['tagline'] %>
+                          </li>
+                          <div class="mt-1">
+                            <% if( pickRoadmapButtonFlag ){ %>
+                              <a onclick="alert(`Please pick up the roadmap to access this resource :\\`); return false;" href="<%= resources[j]['link'] %>" class="view-more-btn" target="_blank">View More</a>
+                            <% } else{%>
+                              <a href="<%= resources[j]['link'] %>" class="view-more-btn" target="_blank">View More</a>
+                            <% } %>
+                          </div>
+                        </div>
+                        <% } %>
+                          <% } %>
+                  </ol>
+                  </p>
+                  <hr>
+                  <% if(!milestones[i]['isMilestonedone']){ %>
+                    <% if( pickRoadmapButtonFlag ){ %>
+                      <div class="mt-4">
+                        <a onclick="alert(`Please pick up the roadmap first :\\`); return false;" href="/mark-as-done?roadmap_id=<%= roadmap['id'] %>&milestone_id=<%= milestones[i]['id'] %>"
+                          class="roadmaps-btn">Mark as Done</a>
+                      </div>
+                    <% } else{%>
+                      <div class="mt-4">
+                        <a href="/mark-as-done?roadmap_id=<%= roadmap['id'] %>&milestone_id=<%= milestones[i]['id'] %>"
+                          class="roadmaps-btn">Mark as Done</a>
+                      </div>
+                    <% } %>
+                    <% } else{ %>
+                      <div class="mt-4">
+                        <button style="cursor: auto;" role="link" aria-disabled="true"
+                          class="d-flex align-items-center justify-content-center completed-roadmaps-btn">
+                          <div>Completed</div>
+                          <img class="d-block img-fluid tick-image" src="images/tick.png" alt="tick">
+                        </button>
+                      </div>
+                      <% } %>
+                </div>
+              </div>
             </div>
-          </div>
 
-        <% } %>
-       
+            <% } %>
 
 
 
-    </div>
 
+        </div>
 
 
 
   </div>
 
   <%- include('partials/footer.ejs') %>
-
-
