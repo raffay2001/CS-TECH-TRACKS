@@ -1,3 +1,4 @@
+const { compareSync } = require('bcrypt');
 const pool = require('./dbConfig');
 
 
@@ -150,13 +151,113 @@ const showGuidedProject = async (req, res) => {
 const showQuiz = async (req, res) => {
     const roadmap_id = req.query.id;
     let context = {
-        'title': 'GUIDED PROJECT',
+        'title': 'QUIZ',
         'is_authenticated': true,
         'name': req.user.name,
-        'picture': req.user.picture
+        'picture': req.user.picture,
+        'isQuizSubmitted': false
     }
+    const roadmapQuizes = await pool.query(`SELECT * FROM quiz WHERE roadmap_id = $1`, [roadmap_id]);
+    const roadmapQuiz = roadmapQuizes.rows[0];
+    const quizId = roadmapQuiz['id'];
+    const allQuestions = await pool.query(`SELECT * FROM question WHERE quiz_id = $1`, [quizId]);
+    const allQuestionList = allQuestions.rows;
+    const allOptions = await pool.query(`SELECT * FROM option WHERE question_id IN (SELECT id FROM question WHERE quiz_id = $1)`, [quizId]);
+    const allOptionList = allOptions.rows;
+    context['questions'] = allQuestionList;
+    context['options'] = allOptionList;
     res.render('quiz', context);
 }
+
+const submitQuiz = async (req, res) => {
+    let context = {
+        'title': 'QUIZ',
+        'is_authenticated': true,
+        'name': req.user.name,
+        'picture': req.user.picture,
+        'isQuizSubmitted': false
+    }
+    context['isQuizSubmitted'] = true;
+    const roadmap_id = req.query.id;
+
+    const roadmapQuizes = await pool.query(`SELECT * FROM quiz WHERE roadmap_id = $1`, [roadmap_id]);
+    const roadmapQuiz = roadmapQuizes.rows[0];
+    const quizId = roadmapQuiz['id'];
+    const allQuestions = await pool.query(`SELECT * FROM question WHERE quiz_id = $1`, [quizId]);
+    const allQuestionList = allQuestions.rows;
+    const allOptions = await pool.query(`SELECT * FROM option WHERE question_id IN (SELECT id FROM question WHERE quiz_id = $1)`, [quizId]);
+    const allOptionList = allOptions.rows;
+
+    // Object that Contains User Submitted Questions Along With Options 
+    let userQuestionObj = {};
+
+    // Object that Contains Original Questions Along With Correct Options 
+    let correctQuestionObj = {};
+
+
+    // Fetching The Questions And User Selected Options From the Client Side 
+    for(let i = 0; i<allQuestionList.length; i++){
+        for(let j in req.body){
+            if(allQuestionList[i]['content']===j){
+                userQuestionObj[allQuestionList[i]['content']] = req.body[j];
+            }
+        }
+    }
+
+    // Fetching the Original Questions Along With Correct From the Database 
+    for(let i = 0; i<allQuestionList.length; i++){
+        for(let j = 0; j<allOptionList.length; j++){
+            if(allQuestionList[i]['id']===allOptionList[j]['question_id']){
+                if(allOptionList[j]['is_correct']){
+                    correctQuestionObj[allQuestionList[i]['content']] = allOptionList[j]['content'];
+                }
+            }
+        }   
+    }
+
+    // Variable to Hold the Number of Correct Answers 
+    let correctAnswers = 0;
+
+    // Variable to Hold the Total Number of Answers 
+    let totalAnswers = Object.keys(correctQuestionObj).length;
+
+    // Comparing User Submitted Questions with the Original Questions To Calculate the Grade 
+    for(let k in correctQuestionObj){
+        for(let l in userQuestionObj){
+            if(k===l){
+                if(correctQuestionObj[k]===userQuestionObj[l]){
+                    correctAnswers += 1;
+                }
+            }
+        }
+    }
+
+    // Calculating the Grade of the User
+    let grade = Math.ceil((correctAnswers/totalAnswers)*100);
+
+    if(grade<50){
+        // Passing the Message telling the Grade to the User
+        req.flash('info_msg', `Sorry, you fail to pass this quiz.Your Grade is: ${grade}% ): You can try again later.The correct answers are shown below`);
+    }
+    else if(grade>=50&&grade<=70){
+        // Passing the Message telling the Grade to the User
+        req.flash('info_msg', `You Grade is: ${grade}% for this Quiz.Keep up the great work and keep learning.The correct answers are shown below`);
+    }
+    else{
+        // Passing the Message telling the Grade to the User
+        req.flash('success_msg', `Congratulations🎉🎉, You Grade is: ${grade}% for this Quiz. Keep up the great work and keep learning. The correct answers are shown below`);
+    }
+
+
+    console.log('Original Resource: ', correctQuestionObj);
+    console.log('User Submitted: ', userQuestionObj);
+    console.log(`User Has ${correctAnswers} Correct Answers And The Grade of the User is: ${grade}`);
+    context['questions'] = allQuestionList;
+    context['options'] = allOptionList;
+    res.render('quiz', context);
+}
+
+
 
 module.exports = {
     roadmapController,
@@ -165,5 +266,6 @@ module.exports = {
     showQuiz,
     markMilestoneAsDone,
     pickRoadmap,
-    showUserRoadmaps
+    showUserRoadmaps,
+    submitQuiz
 }

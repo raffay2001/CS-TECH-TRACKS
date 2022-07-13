@@ -14,6 +14,7 @@ const { pickRoadmap } = require('../controllers/roadmapController');
 const { showUserRoadmaps } = require('../controllers/roadmapController');
 const { showGuidedProject } = require('../controllers/roadmapController');
 const { showQuiz } = require('../controllers/roadmapController');
+const { submitQuiz } = require('../controllers/roadmapController');
 const { markMilestoneAsDone } = require('../controllers/roadmapController');
 const { trendController } = require('../controllers/trendController');
 const { blogController } = require('../controllers/blogController');
@@ -93,12 +94,12 @@ router
 // route for picking up a roadmap 
 router
     .route('/pick-roadmap')
-    .get(checkNotAuthenticated, pickRoadmap)
+    .get(checkNotAuthenticated, pickRoadmap);
 
 // route for rendering the user his or her own picked roadmaps 
 router
     .route('/user-roadmaps')
-    .get(checkNotAuthenticated, showUserRoadmaps)
+    .get(checkNotAuthenticated, showUserRoadmaps);
 
 // route for marking the milestone as done 
 router
@@ -108,12 +109,14 @@ router
 // route for the guided project of the roadmap 
 router
     .route('/guided-project')
-    .get(checkNotAuthenticated, showGuidedProject)
+    .get(checkNotAuthenticated, showGuidedProject);
 
 // route for the quiz of the roadmap
 router
     .route('/quiz')
     .get(checkNotAuthenticated, showQuiz)
+    .post(checkNotAuthenticated, submitQuiz);
+
 
 // route for trends page 
 router

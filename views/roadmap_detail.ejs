@@ -50,10 +50,10 @@
               <div>
                 <% if(isRoadmapDone){ %>
                   <a href="/guided-project?id=<%= roadmap_id %>" class="roadmaps-btn mx-2">Guided Project</a>
-                  <a href="/quiz" class="roadmaps-btn mx-2">Quiz</a>
+                  <a href="/quiz?id=<%= roadmap_id %>" class="roadmaps-btn mx-2">Quiz</a>
                 <% }else{ %>
-                  <a onclick="alert(`Please Complete the Roadmap Before Doing the Project :\\`); return false;" href="/guided-project" class="roadmaps-btn mx-2">Guided Project</a>
-                  <a onclick="alert(`Please Complete the Roadmap Before Attempting the Quiz :\\`); return false;" href="/quiz" class="roadmaps-btn mx-2">Quiz</a>
+                  <a onclick="alert(`Please Complete the Roadmap Before Doing the Project :\\`); return false;" href="/guided-project?id=<%= roadmap_id %>" class="roadmaps-btn mx-2">Guided Project</a>
+                  <a onclick="alert(`Please Complete the Roadmap Before Attempting the Quiz :\\`); return false;" href="/quiz?id=<%= roadmap_id %>" class="roadmaps-btn mx-2">Quiz</a>
                 <% } %>
               </div>
             

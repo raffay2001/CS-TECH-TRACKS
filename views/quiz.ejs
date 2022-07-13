@@ -3,6 +3,27 @@
 
   <div class="container d-flex justify-content-center mb-5 pb-5 mt-5">
     <div>
+
+      <!-- For Showing Success and Info Messages -->
+
+      <% if (messages.info_msg) { %>
+        <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
+          <div style="width: 28rem;" class="alert alert-secondary alert-dismissible fade show" role="alert">
+            <%= messages.info_msg %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
+      <% } %>
+
+      <% if (messages.success_msg) { %>
+        <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
+          <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= messages.success_msg %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
+      <% } %>
+
       <div class="mt-1 mb-2">
         <img src="images/4398.jpg" class="img-fluid" id="quiz-image" alt="quiz-image">
       </div>
@@ -10,51 +31,66 @@
         <h1 class="mt-4 mb-2 text-center" id="quiz-heading">Quiz</h1>
         <!-- Quiz Form  -->
         <form action="#" method="POST" class="mt-5">
-          <p class="my-0">Question 1:</p>
 
-          <div class="form-check">
-            <div style="padding-top: 0.5rem;">
-              <input class="form-check-input" type="radio"
-                name="options" id="radio-1">
-              <label class="form-check-label" for="radio-1">
-                Option 1
-              </label>
-            </div>
-          </div>
+          <% for(let i = 0; i<questions.length; i++){ %>
 
+            <p class="my-0"><%= i+1 %>-&nbsp;<%= questions[i]['content'] %></p>
 
-          <div class="form-check">
-            <div style="padding-top: 0.5rem;">
-              <input class="form-check-input" type="radio"
-                name="options" id="radio-2">
-              <label class="form-check-label" for="radio-2">
-                Option 2
-              </label>
-            </div>
-          </div>
+            <% for(let j = 0; j<options.length; j++){ %>
+              <% if(questions[i]['id']===options[j]['question_id']){ %>
 
+                <% if(isQuizSubmitted){ %>
 
-          <div class="form-check">
-            <div style="padding-top: 0.5rem;">
-              <input class="form-check-input" type="radio"
-                name="options" id="radio-3">
-              <label class="form-check-label" for="radio-3">
-                Option 3
-              </label>
-            </div>
-          </div>
+                  <% if(options[j]['is_correct']){ %>
 
+                    <div class="form-check">
+                      <div style="padding-top: 0.5rem;">
+                        <input checked required class="form-check-input" type="radio"
+                          name="<%= questions[i]['content'] %>" id="radio-<%= j %>" value="<%= options[j]['content'] %>">
+                        <label class="form-check-label" for="radio-<%= j %>">
+                          <%= options[j]['content'] %>
+                        </label>
+                      </div>
+                    </div>
+  
+                  <% } else{ %>
+  
+                    <div class="form-check">
+                      <div style="padding-top: 0.5rem;">
+                        <input required class="form-check-input" type="radio"
+                          name="<%= questions[i]['content'] %>" id="radio-<%= j %>" value="<%= options[j]['content'] %>">
+                        <label class="form-check-label" for="radio-<%= j %>">
+                          <%= options[j]['content'] %>
+                        </label>
+                      </div>
+                    </div>
+  
+                  <% } %>
 
-          <div class="form-check">
-            <div style="padding-top: 0.5rem;">
-              <input class="form-check-input" type="radio"
-                name="options" id="radio-4">
-              <label class="form-check-label" for="radio-4">
-                Option 4
-              </label>
-            </div>
-          </div>
+                <% }else{ %>
 
+                  <div class="form-check">
+                    <div style="padding-top: 0.5rem;">
+                      <input required class="form-check-input" type="radio"
+                        name="<%= questions[i]['content'] %>" id="radio-<%= j %>" value="<%= options[j]['content'] %>">
+                      <label class="form-check-label" for="radio-<%= j %>">
+                        <%= options[j]['content'] %>
+                      </label>
+                    </div>
+                  </div>
+
+                <% } %>
+                
+
+              <% } %>
+            <% } %>
+            <div class="pb-4"></div>
+
+          <% } %>
+            
+          <% if(!isQuizSubmitted){ %>
+            <button type="submit" class="mt-5">Submit</button>
+          <% } %>
 
         </form>
       </div>

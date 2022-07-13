@@ -16,7 +16,9 @@ CREATE TABLE users(
 CREATE TABLE roadmap(
     id BIGSERIAL PRIMARY KEY NOT NULL,
     title VARCHAR(128),
-    created_at DATE DEFAULT NOW()::DATE
+    created_at DATE DEFAULT NOW()::DATE,
+    tagline TEXT,
+    icon TEXT
 );
 
 -- 3) USER_ROADMAP TABLE 
@@ -148,4 +150,12 @@ CREATE TABLE trend(
     title VARCHAR(256),
     link TEXT,
     picture TEXT DEFAULT NULL
+);
+
+-- 20) USER_MILESTONE TABLE 
+CREATE TABLE user_milestone(
+    user_id BIGSERIAL REFERENCES users(id) ON DELETE CASCADE,
+    roadmap_id BIGSERIAL REFERENCES roadmap(id) ON DELETE CASCADE,
+    milestone_id BIGSERIAL REFERENCES milestone(id) ON DELETE CASCADE,
+    PRIMARY KEY(user_id, roadmap_id, milestone_id)
 );
