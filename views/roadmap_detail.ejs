@@ -3,7 +3,16 @@
 
   <div class="container">
 
-    <!-- For Showing Success Messages -->
+    <!-- For Showing Success and Info Messages -->
+    <% if (messages.info_msg) { %>
+      <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
+        <div style="width: 28rem;" class="alert alert-secondary alert-dismissible fade show" role="alert">
+          <%= messages.info_msg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    <% } %>
+
     <% if (messages.success_msg) { %>
       <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
         <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -13,8 +22,9 @@
       </div>
       <% } %>
 
+
         <h3 class="text-center roadmap-heading my-0 pt-5">
-          <%= title %>.
+          <%= title %> <img style="width: 35px; height: 35px;" src="<%= icon %>" alt="logo">
         </h3>
 
         <div class="links mb-3 pb-4 mt-5">
@@ -26,14 +36,20 @@
               </a>
             </div>
             <% } else{ %>
-              <div></div>
+              <% if(isRoadmapDone){ %>
+                <div>
+                    <div class="roadmaps-btn-1">Completed&nbsp; <img style="width: 20px; height: 20px;" src="https://cdn-icons-png.flaticon.com/512/709/709605.png" alt="tick-img"></div>
+                </div>
+              <% } else{ %>
+                <div></div>
+              <% } %>
             <% } %>
 
             <% if(!pickRoadmapButtonFlag){%>
 
               <div>
                 <% if(isRoadmapDone){ %>
-                  <a href="/guided-project" class="roadmaps-btn mx-2">Guided Project</a>
+                  <a href="/guided-project?id=<%= roadmap_id %>" class="roadmaps-btn mx-2">Guided Project</a>
                   <a href="/quiz" class="roadmaps-btn mx-2">Quiz</a>
                 <% }else{ %>
                   <a onclick="alert(`Please Complete the Roadmap Before Doing the Project :\\`); return false;" href="/guided-project" class="roadmaps-btn mx-2">Guided Project</a>

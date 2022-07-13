@@ -75,7 +75,7 @@
 
 .blog-title {
     font-weight: 800 !important;
-    color: rgba(50, 50, 50, 0.98);
+    color: rgba(50, 50, 50, 0.91);
 }
 
 .blog-parent {
@@ -107,14 +107,14 @@
 .blog-heading {
     font-family: 'Montserrat', sans-serif !important;
     font-family: 'Satisfy', cursive;
-    color: rgba(74, 68, 215, 0.7);
+    color: rgba(50, 50, 50, 0.89);
     font-weight: 700 !important;
 }
 
 /* BLOG DETAIL PAGE STYLING  */
 .blog-detail-title {
     font-weight: 800 !important;
-    color: rgba(50, 50, 50, 0.98);
+    color: rgba(50, 50, 50, 0.91);
     padding: 2rem 0rem 0rem 0rem !important;
     margin-bottom: 0rem !important;
 }

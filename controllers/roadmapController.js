@@ -70,6 +70,7 @@ const showRoadmap = async (req, res) => {
 
     if(userSelectedMilestoneList.length === sortedroadmapMilestoneList.length) {
         isRoadmapDone = true;
+        req.flash('info_msg', `Congratulations on completing this Roadmap 🚀, you still have a long way to go. Keep up the great work.🎉 You have now access to the guided project and graded quiz of this roadmap.`);
     }
 
 
@@ -78,6 +79,8 @@ const showRoadmap = async (req, res) => {
 
     let context = {
         'title': roadmap['title'],
+        'icon': roadmap['icon'],
+        'roadmap_id': roadmap['id'],
         'is_authenticated': true,
         'name': req.user.name,
         'picture': req.user.picture,
@@ -127,12 +130,20 @@ const showUserRoadmaps = async (req, res) => {
 
 const showGuidedProject = async (req, res) => {
     const roadmap_id = req.query.id;
+    const guidedProjects = await pool.query(`SELECT * FROM guidedproject WHERE roadmap_id = $1`, [roadmap_id]);
+    const guidedProjectList = guidedProjects.rows;
+    const solutions = await pool.query(`SELECT * FROM solution WHERE guidedproject_id IN (SELECT id FROM guidedproject WHERE roadmap_id = $1)`, [roadmap_id]);
+    const solutionList = solutions.rows;
+
     let context = {
-        'title': 'GUIDED PROJECT',
+        'title': 'GUIDED PROJECTS',
         'is_authenticated': true,
         'name': req.user.name,
         'picture': req.user.picture
     }
+    context['projects'] = guidedProjectList;
+    context['solutions'] = solutionList; 
+    
     res.render('guided_project', context);
 }
 

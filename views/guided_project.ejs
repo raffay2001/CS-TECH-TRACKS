@@ -1,14 +1,35 @@
 <%- include('partials/header.ejs') %>
 
 
-  <div class="container p-0 mt-3">
+  <div style="padding-bottom: 10rem;" class="container mt-1 mb-5">
+
+        <h3 class="text-center roadmap-heading mb-5">
+          Guided Projects&nbsp;<img style="width: 50px; height: 50px;" src="https://cdn-icons.flaticon.com/png/512/900/premium/900967.png?token=exp=1657699279~hmac=a9b833b0c727fae685477bea7033e21a" alt="logo">
+        </h3>
+
+
         <div class="card" style="overflow-y:hidden; max-width: 100%; overflow-x:hidden;">
             <img src="images/Problem solving-pana.png" class="card-img" alt="...">
         </div>
-        <h3 class="mt-4 mb-2" id="guided-project-heading" style="font-family:'Montserrat', sans-serif;">Guided Project Title</h3>
-        <p class="my-0" id="problem-statement">Statement,Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum provident tenetur magni
-            recusandae, repudiandae dolorem magnam. Repudiandae voluptatem assumenda recusandae!</p>
-            <a id="solution-btn" href="#" class="btn mt-3 btn-lg text-white mb-5">Solution</a>
+        <div class="pb-5"></div>
+        <% for(let i = 0; i<projects.length; i++){ %>
+
+          <div class="mt-1">
+            <h3 class="mt-4 mb-2" id="guided-project-heading" style="font-family:'Montserrat', sans-serif;"><svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z" />
+            </svg>&nbsp;&nbsp;<%= projects[i]['title'] %></h3>
+            <p class="my-0" id="problem-statement"><%= projects[i]['description'] %></p>
+
+            <% for(let j = 0; j<solutions.length; j++){ %>
+              <% if(solutions[j]['guidedproject_id'] === projects[i]['id']){ %>
+                <a id="solution-btn" href="<%= solutions[j]['link'] %>" class="btn mt-3 btn-lg text-white" target="_blank">Solution</a>
+              <%}%>
+            <% } %>
+
+          </div> <hr><div class="pb-3"></div>
+
+        <% } %>
   </div>
         
 <%- include('partials/footer.ejs') %>
