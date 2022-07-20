@@ -21,6 +21,9 @@ const profileController = async (req, res) => {
     context['city'] = city;
     context['street'] = street;
     context['zipcode'] = zipcode;
+
+    
+
     res.render('profile', context);
 }
 

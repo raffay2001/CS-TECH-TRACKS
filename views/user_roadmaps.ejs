@@ -1,62 +1,70 @@
 <%- include('partials/header.ejs') %>
 
+  <h1 class="text-center mt-5" id="trends-heading">Your Roadmaps 💻</h1>
+  
+  <div class="container pt-1 mb-5 pb-5">
+    <div class="row mt-2">
 
-    <!-- For Showing Success Messages -->
-    <% if (messages.success_msg) { %>
-    <div class="container-fluid pt-3 d-flex justify-content-center align-items-center">
-        <div style="width: 28rem;" class="alert alert-success alert-dismissible fade show" role="alert">
-        <%= messages.success_msg %>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    </div>
-    <% } %>
-    
-    <h1 class="text-center pt-5 mb-5" id="your-roadmap-heading">
-        Your Roadmaps 💻
-    </h1>
+        <% if(roadmaps.length === 0){ %>
 
-    <div class="container d-flex justify-content-evenly mb-5" style="margin-bottom: 100px;">
-        <div class="row">
-
-            <% if(roadmaps.length === 0){ %>
-
-                <div class="col-12 text-center mb-5 pb-5">
-                    <div class="mb-5">
-                        <p class="m-0 p-0">You have not picked any roadmap :(</p>
-                        <a href="/roadmaps">
-                            <button class="btn btn-secondary btn-block mt-3">See Roadmaps</button>
-                        </a>
-                    </div>
+            <div class="col-12 text-center mb-5 pb-5">
+                <div class="mb-5">
+                    <p class="m-0 p-0">You have not picked any roadmap :(</p>
+                    <a href="/roadmaps">
+                        <button class="btn btn-secondary btn-block mt-3">See Roadmaps</button>
+                    </a>
                 </div>
+            </div>
 
-            <% }else{ %>
+        <% }else{ %>
 
-                <% for(let i=0; i<roadmaps.length; i++){ %>
-                    <div class="col-4 text-center">
-                        <div class="card shadow card-media trend-parent p-0" style="width: 18rem;">
-                            <div class="card-body py-0">
-                                <h4 style="font-weight: 600;" class="pt-3 trend-title text-center">
-                                    <%= roadmaps[i]['title'] %>
-                                </h4>
-                                <p style="font-size: 1rem; text-align: start;">
-                                    <%= roadmaps[i]['tagline'] %>
-                                </p>
-                                <a href="/roadmap?id=<%= roadmaps[i]['id'] %>">
-                                    <button class="mt-0 trend-btn mb-3">View Roadmap</button>
-                                </a>
-                                <!-- <a href="/pick-roadmap?id=<%= roadmaps[i]['id'] %>">
-                                    <button class="mt-0 btn btn-secondary w-100 pick-roadmap-btn mb-3">Drop Roadmap</button>
-                                </a> -->
-                            </div>
+            <% for(let i=0; i<roadmaps.length; i++){ %>
+                <div class="col-4 text-center">
+                    <div class="card shadow card-media trend-parent p-0" style="width: 18rem; height: 18rem;">
+                        <div class="card-body py-0 my-0 d-flex flex-column justify-content-center">
+                            <h4 style="font-weight: 600;" class="pt-3 trend-title text-center">
+                                <%= roadmaps[i]['title'] %>
+                            </h4>
+                            <p style="font-size: 1rem; text-align: start;">
+                                <%= roadmaps[i]['tagline'] %>
+                            </p>
+                            <a href="/roadmap?id=<%= roadmaps[i]['id'] %>">
+                                <button class="mt-0 trend-btn mb-3">View Roadmap</button>
+                            </a>
+                            <!-- <a href="/pick-roadmap?id=<%= roadmaps[i]['id'] %>">
+                                <button class="mt-0 btn btn-secondary w-100 pick-roadmap-btn mb-3">Drop Roadmap</button>
+                            </a> -->
                         </div>
                     </div>
-                <% } %>
-
+                </div>
             <% } %>
-            
 
-        </div>
+        <% } %>
+
     </div>
+  </div>
 
 
-<%- include('partials/footer.ejs') %>   
+
+<%- include('partials/footer.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
