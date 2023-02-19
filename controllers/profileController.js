@@ -22,7 +22,11 @@ const profileController = async (req, res) => {
     context['street'] = street;
     context['zipcode'] = zipcode;
 
-    
+    const allbadges = await pool.query(`SELECT * FROM badge`); 
+    const  allbadgeList = allbadges.rows;
+  
+    context['badges'] = allbadgeList;
+
 
     res.render('profile', context);
 }

@@ -16,18 +16,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </div>
-    <% } %>
+      <% } %>
 
-    <% if (messages.info_msg) { %>
-          <div class="container-fluid d-flex justify-content-center align-items-center"> 
+        <% if (messages.info_msg) { %>
+          <div class="container-fluid d-flex justify-content-center align-items-center">
             <div style="width: 28rem;" class="alert alert-secondary alert-dismissible fade show" role="alert">
               <%= messages.info_msg %>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           </div>
-    <% } %>
+          <% } %>
 
-    <div class="row">
+            <div class="row">
 
               <!-- General Info Form  -->
               <div class="col-md-6 col-12">
@@ -74,7 +74,8 @@
                   <!-- Street No. Field  -->
                   <div class="mb-3 input-div u-form-group u-form-group-5">
                     <label for="street" class="u-custom-font u-font-montserrat u-label">Street No.</label>
-                    <input type="text" id="street" name="reqstreet" placeholder="Street No" required value="<%= street %>">
+                    <input type="text" id="street" name="reqstreet" placeholder="Street No" required
+                      value="<%= street %>">
                   </div>
 
                   <!-- Zip code Field  -->
@@ -98,7 +99,8 @@
               <div class="container-fluid d-flex justify-content-center align-items-center col-md-6 col-12">
 
 
-                <form action="/update-profile-picture" method="POST" class="container-fluid d-flex justify-content-center align-items-center"
+                <form action="/update-profile-picture" method="POST"
+                  class="container-fluid d-flex justify-content-center align-items-center"
                   enctype="multipart/form-data">
 
                   <div>
@@ -126,7 +128,7 @@
 
               </div>
 
-    </div>
+            </div>
 
 
   </section>
@@ -142,36 +144,19 @@
     <div class="conatiner">
 
       <div class="row">
+        <% for(let i=0; i<badges.length; i++){ %>
 
-        <div class="mb-4 col-md-3 col-12">
-          <div class="d-flex flex-column justify-content-center align-items-center mb-2 badge-pic-parent">
-            <img src="images/blank-profile-picture-973460.svg" alt="sample-img">
-            <p class="badge-title m-0 p-0">
-              Silver
-            </p>
+          <div class="mb-4 col-md-3 col-12">
+            <div class="d-flex flex-column justify-content-center align-items-center mb-2 badge-pic-parent">
+              <img  src="<%= badges[i]['picture'] %>"  >
+              <p class="badge-title m-0 p-0">
+                <%= badges[i]['name'] %>
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div class="mb-4 col-md-3 col-12">
-          <div class="d-flex flex-column align-items-center justify-content-center mb-2 badge-pic-parent">
-            <img src="images/blank-profile-picture-973460.svg" alt="sample-img">
-            <p class="badge-title m-0 p-0">Bronze</p>
-          </div>
-        </div>
+          <%}%>
 
-        <div class="mb-4 col-md-3 col-12">
-          <div class="d-flex align-items-center flex-column justify-content-center mb-2 badge-pic-parent">
-            <img src="images/blank-profile-picture-973460.svg" alt="sample-img">
-            <p class="badge-title m-0 p-0">Diamond</p>
-          </div>
-        </div>
-
-        <div class="mb-4 col-md-3 col-12">
-          <div class="d-flex flex-column align-items-center justify-content-center mb-2 badge-pic-parent">
-            <img src="images/blank-profile-picture-973460.svg" alt="sample-img">
-            <p class="badge-title m-0 p-0">Platinum</p>
-          </div>
-        </div>
 
       </div>
     </div>

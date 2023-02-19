@@ -14,10 +14,15 @@ const showIndexPage = async (req, res) => {
         req.flash('success_msg', `Welcome Back ${name}!`);
     }
 
+    // fetching all the testimonials from dB 
     const allTestimonials = await pool.query(`SELECT * FROM testimonial`); 
     const  allTestimonialList = allTestimonials.rows;
-    // console.log(allTestimonialList);
     context['testimonials'] = allTestimonialList;
+
+    // fetching all the users from the dB 
+    const allUsers = await pool.query(`SELECT * FROM users;`);
+    const allUserList = allUsers.rows;
+    context['users'] = allUserList;
 
     res.render('home', context);
 }
